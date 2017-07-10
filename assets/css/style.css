@@ -4,15 +4,20 @@ material.{#607D8B}-{light_blue}.min.css
     background: url('../assets/demos/transparent.jpg') center / cover;
   }
   .demo-layout-transparent .mdl-layout__header,
-  .demo-layout-transparent .mdl-layout__drawer-button {
+  .demo-layout-transparent .mdl-layout__drawer-button,
+  .mdl-layout-title, .mdl-navigation__link {
 
-    color: #607D8B;
+    color: white;
   }
 body {
   background-image: url("../images/skyline.png")
-  
-
 }
-header {
-
+.mdl-layout-spacer{
+  font-style:italic;
+}
+.mdl-navigation, .mdl-layout__drawer {
+  background: #607D8B;
+}
+.mdl-layout__header-row{
+  background:#607D8B;
 }
