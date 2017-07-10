@@ -1,4 +1,4 @@
-material.{blue_grey}-{light_blue}.min.css
+material.{#607D8B}-{light_blue}.min.css
 
 .demo-layout-transparent {
     background: url('../assets/demos/transparent.jpg') center / cover;
@@ -6,5 +6,13 @@ material.{blue_grey}-{light_blue}.min.css
   .demo-layout-transparent .mdl-layout__header,
   .demo-layout-transparent .mdl-layout__drawer-button {
 
-    color: purple;
+    color: #607D8B;
   }
+body {
+  background-image: url("../images/skyline.png")
+  
+
+}
+header {
+
+}
