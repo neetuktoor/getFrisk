@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Submition Form</title>
+
+<!-- mobile compatible-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Design -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-light_blue.min.css" />
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+</head>
+<body>
+
+<!-- Textfield with Floating Label -->
+
+<div class=container>
+<div class=header>
+	<h3>Submition Form</h3>
+
+</div>
+
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="nameInput">
+    <label class="mdl-textfield__label" for="nameInput">Name</label>
+  </div>
+  <br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="locationInput">
+    <label class="mdl-textfield__label" for="locationInput">Tag location via Google Maps</label>
+  </div>
+  <br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="ratingInput">
+    <label class="mdl-textfield__label" for="ratingInput">Rating</label>
+  </div>
+  <br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="descriptionInput">
+    <label class="mdl-textfield__label" for="descriptionInput">Description</label>
+  </div>
+  <br>
+
+<!--check box for categories-->
+<form>
+  <input type="radio" name="category" value="weird">Weird<br>
+  <input type="radio" name="category" value="food/drink">Food/Drink<br>
+  <input type="radio" name="category" value="art">Art<br>
+  <input type="radio" name="category" value="activities">Activites<br>
+</form> 
+
+      
+<!-- code to upload image-->
+  <div class="file_input_div">
+    <div class="file_input">
+      <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">file_upload</i>
+        <input id="file_input_file" class="none" type="file">
+      </label>
+    </div>
+    </div>
+    <br>
+
+  
+</div>
+
+</body>
+
+</form>
+
