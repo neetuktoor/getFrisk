@@ -7,3 +7,8 @@
 *.iml
 out
 gen
+.firebaserc
+.firebase.json
+functions
+firebase.json
+geo.json
