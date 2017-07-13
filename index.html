@@ -1,53 +1,116 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>getFrisk</title>
-        <!--Google Material stuff for the next 3 lines-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-light_blue.min.css" />
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<!--style and resets-->
-<link rel="stylesheet" type="text/css" href=assets/css/style.css>
-<link rel="stylesheet" type="text/css" href=assets/css/reset.css>
-<!--Alice Yu, Don Fox, Amanda Wittenstein, Adam Koss, Neetu Toor -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>getFrisk</title>
+  <!--Google Material stuff for the next 3 lines-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_orange.min.css" />
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Enriqueta|Istok+Web" rel="stylesheet">
+  <!--style and resets-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.com/libraries/bulma">
+  <!--Alice Yu, Don Fox, Amanda Wittenstein, Adam Koss, Neetu Toor -->
 
 </head>
 
 <body>
-  <header>
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-      <header class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <span class="mdl-layout-title">getFrisk</span>
-          <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer">If you see something, say something</div>
-          <!-- Navigation -->
-          <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="#">Link</a>
-            <a class="mdl-navigation__link" href="#">Link</a>
-            <a class="mdl-navigation__link" href="#">Link</a>
-            <a class="mdl-navigation__link" href="#">Link</a>
-          </nav>
-        </div>
-      </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">getFrisk</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="#">Link</a>
-          <a class="mdl-navigation__link" href="#">Link</a>
-          <a class="mdl-navigation__link" href="#">Link</a>
-          <a class="mdl-navigation__link" href="#">Link</a>
+
+  <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+      <div class="topRow">
+        <!-- Title -->
+        <span class="headerTitle">getFrisk</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="headerSpacer">If you see something, say something</div>
+        <!-- Navigation -->
+
+        <nav class="menu">
+          <ul class="clearfix">
+            <li><a href="#">Browse</a>
+              <li><form class="search">
+                <input type="text" placeholder="Search..." required>
+                <input type="button" value="Search">
+              </form></li>
+                <li><a href="#">Add a location</a></li>
+                <li><a href="#">Home</a></li>
+                <li>
+                  <a href="#">Categories</a>
+                  <ul class="subMenu">
+                    <li><a href="#">Closest to me</a></li>
+                    <li><a href="#">Add Location</a></li>
+                    <li><a href="#">My Locations</a></li>
+                  </ul>
+                </li>
         </nav>
-      </div>
-      <main class="mdl-layout__content">
-      </main>
+
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="headerTitle2">getFrisk</span>
+      <nav class="mdl-navigation">
+        <a class="navLink" href="#">Categories</a>
+        <a class="catLink" href="#">Closest to me</a>
+        <a class="catLink" href="#">Add a location</a>
+        <a class="catLink" href="#">My locations</a>
+        <a class="catLink" href="#">Search</a>
+        <a class="navLink" href="#">Grouping</a>
+        <a class="catLink" href="#">Weird</a>
+        <a class="catLink" href="#">Food and Drink</a>
+        <a class="catLink" href="#">Art</a>
+        <a class="catLink" href="#">Activities</a>
+        <a class="catLink" href="#">Submit</a>
+        <a class="navLink" href="#">Browse</a>
+        <a class="catLink" href="#">Nearest</a>
+        <a class="catLink" href="#">Highest Rated</a>
+        <a class="catLink" href="#">Newest</a>
+        <a class="catLink" href="#">Display All</a>
+        <a class="navLink" href="#">Link</a>
+        <a class="navLink" href="#">Terms of Service</a>
+      </nav>
     </div>
-  </header>
+    </div>
+    <main class="mdlContent">
+      <footer class="miniFooter">
+        <div class="miniFooterLeft">
+          <div class="logo">
+            &copy;getFrisk
+          </div>
+          <ul class="linkList">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy and Terms</a></li>
+            <li><a href="#">User Agreement</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
 
+      </footer>
+    </main>
+    <script>
+      /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
 
-</button>
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
 </body>
+
 </html>
