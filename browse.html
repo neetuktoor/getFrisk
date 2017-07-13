@@ -19,8 +19,6 @@
 	}
 	.demo-card-square > .mdl-card__title {
 	color: #fff;
-	background:
-	url('http://www.everywheredoor.com/wp-content/uploads/2014/06/graf-1.jpg') bottom right 15% no-repeat #46B6AC;
 	}
 
 </style>
@@ -28,13 +26,27 @@
 </head>
 
 <body>
+<!-- create row for selection buttons-->
+<!-- <div class="btn-group" style="width:100%">
+  <button style="width:33%">Top Locations</button>
+  <button style="width:33%">Featured Location</button>
+  <button style="width:33%">Browse Near You</button>
+</div> -->
+
+<!-- Accent-colored raised button with ripple -->
+<div class ="btn-group" style="width:100%">
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width: 33%">Nearest</button>
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width: 33%">Newest</button>
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width: 33%">Highest Rated</button>
+
+
 <!-- Row 1-->
 <div class="mdl-grid">
 	<!-- Placeholder Image 1 -->
 	  <div class="mdl-cell mdl-cell--4-col">
 	  	
 		<div class="demo-card-square mdl-card mdl-shadow--2dp">
-		  <div class="mdl-card__title mdl-card--expand">
+		  <div class="mdl-card__title mdl-card--expand" style = "background: url('http://www.everywheredoor.com/wp-content/uploads/2014/06/graf-1.jpg') bottom right 15% no-repeat #46B6AC;">
 		    <h2 class="mdl-card__title-text">Castle Hill</h2>
 		  </div>
 		  <div class="mdl-card__supporting-text">
@@ -49,11 +61,38 @@
   	</div>
 
 	<!--   	Placeholder Image 2-->  
-	<div class="mdl-cell mdl-cell--4-col">Location 2</div>
-
+	<div class="mdl-cell mdl-cell--4-col">
+	<div class="demo-card-square mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title mdl-card--expand" style = "background: url('http://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzL2VwYmc1azc0cHFsZjMyZDkwNTBmOTYwMzc2Y2FkX0M3RDk2MEU2LTNCMDUtNEZCNC05MENCLTRGOTQ2Q0IxNkIyQi5qcGciXSxbInAiLCJ0aHVtYiIsIngzOTA-Il0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDkxIC1hdXRvLW9yaWVudCJdXQ/C7D960E6-3B05-4FB4-90CB-4F946CB16B2B.jpg') bottom right 15% no-repeat;">
+		    <h2 class="mdl-card__title-text">Sparky Park</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		    Site of a former electric substation, Sparky Park was created through the efforts and vision of neighbors. Lovely old trees and a unique art wall make this pocket park something special.
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+		    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+		      Read More
+		    </a>
+		  </div>
+		</div>
+	</div>
 
 	<!--   	Placeholder Image 3-->  
-	 <div class="mdl-cell mdl-cell--4-col">Location 3</div>
+	 <div class="mdl-cell mdl-cell--4-col">
+	<div class="demo-card-square mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title mdl-card--expand" style = "background: url('http://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzL2FmYjIwNGY3MjZkZWQ0OTY5ODVlNTgzYjU5NWVkMDBlNmQyYjhkZGQuanBnIl0sWyJwIiwidGh1bWIiLCJ4MzkwPiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MSAtYXV0by1vcmllbnQiXV0/afb204f726ded496985e583b595ed00e6d2b8ddd.jpg') bottom right 15% no-repeat #46B6AC;">
+		    <h2 class="mdl-card__title-text">Moonlight Towers</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		    In the wake of a series of horrific murders, the city of Austin purchased 31 enormous towers to light the city streets from on high. The 165 foot towers cast a glow “bright enough to read a watch by” in a 1,500 feet (460 meter) radius around each tower.
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+		    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+		      Read More
+		    </a>
+		  </div>
+		</div>
+	</div>
 </div>
 
 <!-- Row 2-->
