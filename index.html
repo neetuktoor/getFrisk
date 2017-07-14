@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE>
+<html xmlns:accept="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>HELLO</title>
-    <!--<link rel="stylesheet" href="assets/js/leaflet/leaflet.css" />-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -12,31 +12,44 @@
 
 <div id="message">Location saved</div>
 <button id="addPin">Add a Pin</button>
+<label>Category</label>
+<select name="field4" id="categorySearch" class="field-select">
+    <option value="All">View All</option>
+    <option value="Bar">Bar</option>
+    <option value="Restaurant">Restaurant</option>
+    <option value="Graffiti">Graffiti</option>
+</select>
+<button id="search">Search</button>
 
-<section style="display: none">
-    <div id="form">
-        <table>
-            <tr>
-                <td>Name:</td>
-                <td><input type='text' id='name'/></td>
-            </tr>
-            <tr>
-                <td>Address:</td>
-                <td><input type='text' id='address'/></td>
-            </tr>
-            <tr>
-                <td>Type:</td>
-                <td><select id='type'> +
-                    <option value='bar' SELECTED>bar</option>
-                    <option value='restaurant'>restaurant</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type='button' value='Save' onclick='submitData(marker)'/></td>
-            </tr>
-        </table>
-    </div>
+<section>
+    <form id="sideForm">
+        <ul class="form-style-1">
+            <li><label for="sidebarPlace">Place <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="Short Descriptor" id="sidebarPlace"/>&nbsp;</li>
+            <li>
+                <label for="sidebarAddress">Address <span class="required">*</span></label>
+                <input type="text" name="field3" class="field-long" id="sidebarAddress" placeholder="1234 Example St."/>
+            </li>
+            <li>
+                <label for="sidebarCategory">Category</label>
+                <select name="field4" id="sidebarCategory" class="field-select">
+                    <option value="Bar">Bar</option>
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="Graffiti">Graffiti</option>
+
+                </select>
+            </li>
+            <li>
+                <label for="sidebarDescription">Description <span class="required">*</span></label>
+                <textarea name="field5" id="sidebarDescription" class="field-long field-textarea" placeholder="What is it?"></textarea>
+            </li>
+            <li>
+                <input id="sidebarFile" type="file" style="display: none" accept="image"><a href="#" id="sidebarFileSelect">Select an Image (optional)</a>
+            </li>
+            <li>
+                <button id="sidebarSubmit">Submit</button>
+            </li>
+        </ul>
+    </form>
 </section>
 
 <script
