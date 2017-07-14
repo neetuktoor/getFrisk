@@ -96,11 +96,13 @@ body {
 .menu > ul > li > a {
     display:inline-block;
     text-shadow:0px 1px 0px rgba(0,0,0,0.4);
-    padding-top:70px;
+    padding-top:20px;
     padding-right:10px;
 
 }
-
+.search{
+  padding-top:20px;
+}
 /*----- Bottom Level -----*/
 .menu li:hover .subMenu {
     z-index:1;
@@ -122,7 +124,19 @@ body {
   color:#ff5722;
   text-align: center;
   font-family: 'Istok Web', sans-serif;
+
 }
+.linkList, {
+  display:inline-block;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  background: #607D8B;
+  color:#ff5722;
+  text-align: center;
+  font-family: 'Istok Web', sans-serif;
+}
+
 @media screen and (max-width: 980px) {
 	{
 		width:100%;

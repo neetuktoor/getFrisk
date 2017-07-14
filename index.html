@@ -7,12 +7,13 @@
   <title>getFrisk</title>
   <!--Google Material stuff for the next 3 lines-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_orange.min.css" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_orange.min.css" />
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Enriqueta|Istok+Web" rel="stylesheet">
   <!--style and resets-->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <script type="text/javascript" src="assets/js/logic.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.com/libraries/bulma">
   <!--Alice Yu, Don Fox, Amanda Wittenstein, Adam Koss, Neetu Toor -->
 
@@ -25,30 +26,48 @@
       <div class="topRow">
         <!-- Title -->
         <span class="headerTitle">getFrisk</span>
-        <!-- Add spacer, to align navigation to the right -->
+        <!-- Slogan -->
         <div class="headerSpacer">If you see something, say something</div>
-        <!-- Navigation -->
+        <!-- Top nav bar -->
 
         <nav class="menu">
           <ul class="clearfix">
-            <li><a href="#">Browse</a>
-              <li><form class="search">
+            <li>
+              <form class="search">
                 <input type="text" placeholder="Search..." required>
                 <input type="button" value="Search">
-              </form></li>
-                <li><a href="#">Add a location</a></li>
-                <li><a href="#">Home</a></li>
-                <li>
-                  <a href="#">Categories</a>
-                  <ul class="subMenu">
-                    <li><a href="#">Closest to me</a></li>
-                    <li><a href="#">Add Location</a></li>
-                    <li><a href="#">My Locations</a></li>
-                  </ul>
-                </li>
+              </form>
+            </li>
+            <li><a href="#">Browse</a></li>
+            <li><a href="#">Add a location</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Categories</a></li>
+            <ul class="subMenu">
+              <li><a href="#">Closest to me</a></li>
+              <li><a href="#">Add Location</a></li>
+              <li><a href="#">My Locations</a></li>
+            </ul>
         </nav>
 
     </header>
+
+
+  <!--Slideshow-->
+  <div class="slideContainer">
+  <div class="slider" style="max-width:300px">
+    <img class="slides" src="assets/images/graffiti.jpg" style="width:100%">
+    <img class="slides" src="assets/images/castleHill.jpg" style="width:100%">
+    <img class="slides" src="assets/images/baylorSt.jpg" style="width:100%">
+    <div class="bottomMiddle" style="width:100%">
+      <div class="khaki" onclick="plusDivs(-1)">&#10094;</div>
+      <div class="khaki" onclick="plusDivs(1)">&#10095;</div>
+      <span class="hoverWhite" onclick="currentDiv(1)"></span>
+      <span class="hoverWhite" onclick="currentDiv(2)"></span>
+      <span class="hoverWhite" onclick="currentDiv(3)"></span>
+    </div>
+  </div>
+
+      <!-- Side nav bar/drawer -->
     <div class="mdl-layout__drawer">
       <span class="headerTitle2">getFrisk</span>
       <nav class="mdl-navigation">
@@ -68,11 +87,11 @@
         <a class="catLink" href="#">Highest Rated</a>
         <a class="catLink" href="#">Newest</a>
         <a class="catLink" href="#">Display All</a>
-        <a class="navLink" href="#">Link</a>
-        <a class="navLink" href="#">Terms of Service</a>
       </nav>
     </div>
     </div>
+
+    <!--Footer-->
     <main class="mdlContent">
       <footer class="miniFooter">
         <div class="miniFooterLeft">
@@ -89,28 +108,7 @@
 
       </footer>
     </main>
-    <script>
-      /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
 
-      // Close the dropdown menu if the user clicks outside of it
-      window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      }
-    </script>
 </body>
 
 </html>
