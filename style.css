@@ -56,10 +56,11 @@
 }
 
 body {
-background-color: rgb(96, 125, 139);
+background-color: rgb(244,67,54);
+color: rgb(96, 125, 139);
 
 }
 
 .demo-card-wide {
-box-shadow: 5px 5px 5px gray;
+box-shadow: 7px 7px 7px rgb(96, 125, 139);
 }
