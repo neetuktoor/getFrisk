@@ -1,0 +1,236 @@
+/*Banner Image and Site Description--->*/
+
+#imageBannerHome {
+  width: 100%;
+}
+
+#imageBannerTitle {
+  color: #fff;
+  height: 400px;
+  background: url('../images/austin.jpeg') center / cover;
+}
+
+#homePageText {
+  font-size: 35px;
+  text-align: center;
+  font-weight: bold;
+  margin: 5px;
+  line-height: 120%;
+  text-shadow: 1.25px 1.25px 0px #000;
+}
+
+#homepagetext {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.categoryBoxes{
+  width: 300px;
+  border-color: lightgrey;
+  border-width: thin;
+}
+
+.demo-card-wide>.mdl-card__title {
+  color: #fff;
+  height: 176px;
+}
+
+.demo-card-wide>.mdl-card__menu {
+  color: #fff;
+}
+
+#segmentBox {
+  margin-left: 30px;
+  background-color: lightgrey;
+  width: 100%
+}
+
+#homeGraffCard {
+  background: url('../images/frog.jpg') center / cover;
+}
+
+#homeMediaCard {
+  background: url('../images/austin.jpeg') center / cover;
+}
+
+#homeOddCard {
+  background: url('../images/roller.jpeg') center / cover;
+}
+
+#categoryBreak {
+  text-align: center;
+  font-size: 12px;
+  color: grey;
+  font-weight: bold;
+}
+
+#categoryCardsGrid {
+  background-color: lightgray;
+}
+
+#categoryCards {
+  margin: 25px;
+  width: 300px;
+}
+
+#categoryCards .mdl-card__title-text {
+  font-weight: bold;
+  background-color: #cc5500;
+  width: 100%;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+
+}
+.demo-card-wide>.mdl-card__title {
+  color: #fff;
+  height: 176px;
+}
+.demo-card-wide>.mdl-card__menu {
+  color: #fff;
+}
+#foodanddrinkimage {
+  background: url('../images/marg.jpeg') center / cover;
+}
+#artimage {
+  background: url('../images/art.jpeg') center / cover;
+}
+#activitiesimage {
+  background: url('../images/chicken.jpg') center / cover;
+}
+.mdl-mini-footer__link-list {
+  margin-top: 30px;
+}
+.mdl-mini-footer {
+  height: 30px;
+  background-color: #607d8b;
+}
+.demo-card-image.mdl-card {
+  width: 256px;
+  height: 256px;
+  background: url('../images/tree.jpg') center / cover;
+}
+.demo-card-image>.mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.demo-card-image__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+#PicsImageCard {
+  background: url('../images/bum.png') center / cover;
+}
+#NewestImageCard {
+  background: url('../images/doughnut.jpeg') center / cover;
+}
+#HighestRatedImageCard {
+  background: url('../images/butter.jpg') center / cover;
+}
+
+#imageBox {
+  background-color: lightgrey;
+}
+
+#imageButton {
+  color: white;
+}
+
+.sortbuttons {
+  margin-left: 300px;
+}
+
+.sortButton {
+  background-color: #cc5500;
+  border-radius: 10px;
+  color: white;
+}
+
+.locationCard {
+  width: 300px;
+  height: 300px;
+}
+
+#artBannerTitle {
+  color: #fff;
+  height: 200px;
+  background: url('../images/robots.jpg') center / cover;
+}
+
+#artBannerHome {
+  width: 100%;
+}
+
+#foodBannerTitle {
+  background: url('../images/foodbanner.jpg') center / cover;
+
+}
+
+#stoopidDrinkCard {
+  background: url('../images/marg.jpeg') center / cover;
+
+}
+
+#foodTruckCard {
+  background: url('../images/foodtruck.jpg') center / cover;
+}
+
+#ridicFoodCard {
+  background: url('../images/bangers.jpg') center / cover;
+}
+
+#foodEventsCard {
+  background: url('../images/foodevent.jpg') center / cover;
+}
+
+#foodBannerHome {
+  width: 100%;
+}
+
+#actBannerHome {
+  width: 100%;
+}
+
+#activitiesBannerTitle {
+  background: url('../images/party.jpg') center / cover;
+
+}
+
+#natureCard {
+  background: url('../images/hippy.jpg') center / cover;
+
+}
+
+#shopsCard {
+  background: url('../images/toystore.jpg') center / cover;
+
+}
+
+#partiesCard {
+  background: url('../images/eor.jpg') center / cover;
+
+}
+
+#funCard {
+  background: url('../images/bike.jpg') center / cover;
+
+}
+
+#graffitiImageCard {
+  background: url('../images/graffitipark.jpeg') center / cover;
+
+}
+#mixedImageCard {
+  background: url('../images/mixed.jpeg') center / cover;
+
+}
+#junkImageCard {
+  background: url('../images/junkart.jpg') center / cover;
+}
+#performanceImageCard {
+  background: url('../images/performance.jpg') center / cover;
+
+}
