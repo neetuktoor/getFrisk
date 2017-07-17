@@ -13,4 +13,4 @@ database.rules.json
 public
 functions
 firebase.json
-geo.json
+public/geo.json

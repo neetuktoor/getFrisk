@@ -16,6 +16,7 @@ let map,
     marker,
     messageWindow,
     markers = [],
+    currPin,
     geoCoder;
 
 let sidebarSelect = document.getElementById('sidebarFileSelect');
@@ -209,18 +210,22 @@ function submitData(marker) {
     infoWindow.close();
 }
 
-
 function genPin(marker, pin, img) {
     google.maps.event.clearListeners(marker, 'click');
-    let content = "<div class='iw-container'>" +
-        "<div class='iw-title'>" + pin.place + "</div>" +
-        "<div class='iw-content'>" + img +
-        "<div class='iw-subTitle'>Address: </div>" + pin.address + "<br>" +
-        "<div class='iw-subTitle'>Description: </div>" + pin.description + "<br>" +
-        "<div class='iw-subTitle'>Category:</div> " + pin.category +
-        "<br></div><div class='iw-bottom-gradient'></div></div>";
+    let content = "<div class=iw-container>" +
+        "<div class=iw-title>" + pin.place + "</div>" +
+        "<div class=iw-content>" + img +
+        "<div class=iw-subTitle>Address: </div>" + pin.address + "<br>" +
+        "<div class=iw-subTitle>Description: </div>" + pin.description + "<br>" +
+        "<div class=iw-subTitle>Category:</div> " + pin.category +
+        "<br></div>" +
+        "<button id=showModal>See More</button>" +
+        "<div class=iw-bottom-gradient></div></div>";
     marker.addListener('click', function (e) {
         messageWindow.setContent(content);
+
+        currPin = pin;
+
         google.maps.event.addListener(messageWindow, 'domready', function () {
             setWindowStyle();
         });
@@ -229,9 +234,32 @@ function genPin(marker, pin, img) {
     })
 }
 
+$(document).on('click', '#showModal', function(){
+    showModal(currPin);
+});
+
+function showModal(pin){
+    let dialog = document.querySelector('dialog');
+    dialogPolyfill.registerDialog(dialog);
+
+    // Now dialog acts like a native <dialog>.
+
+    $("#modalAddress").text(pin.address);
+    $("#modalDescription").text(pin.description);
+    $("#modalPlace").text(pin.place);
+
+    dialog.showModal();
+
+    $(".close").click(function(){
+        if (dialog.open){
+            dialog.close();
+        }
+    });
+}
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -97.7431, lng: 30.2672},
+        center: new google.maps.LatLng(-97.755996, 30.307182),
         zoom: 12
     });
 
@@ -244,6 +272,10 @@ function initMap() {
         'strokeOpacity': "0.5"
     });
 
+    autocomplete = new google.maps.places.Autocomplete(
+        /** @type {!HTMLInputElement} */(document.getElementById('sidebarAddress')),
+        {types: ['geocode']});
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             let pos = {
@@ -252,6 +284,12 @@ function initMap() {
             };
 
             map.setCenter(pos);
+
+            let circle = new google.maps.Circle({
+                center: pos,
+                radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
 
             let currPositionMarker = new google.maps.Marker({
                 'position': pos,
@@ -360,7 +398,7 @@ function setWindowStyle() {
 $("#search").click(function () {
     let searchQuery = $("#categorySearch").val();
 
-    if(searchQuery === "All"){
+    if (searchQuery === "All") {
         setMapOnAll(map);
         return;
     }
@@ -371,19 +409,19 @@ $("#search").click(function () {
 
     let searchRef = searchQueryRef.push(searchQuery);
 
-    setTimeout(function(){
+    setTimeout(function () {
         let searchResults = database.ref('search/results/' + searchRef.key);
         searchResults.on('value', function (snapshot) {
             console.log(snapshot.val());
             let pinRef = snapshot.val().hits;
             console.log(pinRef);
 
-            for(let i=0; i < pinRef.length; i++){
+            for (let i = 0; i < pinRef.length; i++) {
                 let getPinLatLng = database.ref('pins/' + pinRef[i].objectID);
 
-                getPinLatLng.once('value', function(snapshot){
-                    for(let j=0; j<markers.length; j++){
-                        if(snapshot.val().address === markers[j].address){
+                getPinLatLng.once('value', function (snapshot) {
+                    for (let j = 0; j < markers.length; j++) {
+                        if (snapshot.val().address === markers[j].address) {
                             markers[j].marker.setMap(map);
                         }
                     }
