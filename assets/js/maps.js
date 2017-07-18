@@ -17,10 +17,16 @@ let map,
     messageWindow,
     markers = [],
     currPin,
+    currPinKey,
+    currImg,
     geoCoder;
 
 let sidebarSelect = document.getElementById('sidebarFileSelect');
 let sidebarFileElement = document.getElementById('sidebarFile');
+
+$("#sidebarCategory").change(function(){
+    let category = $("#sidebarCategory").val();
+});
 
 sidebarSelect.addEventListener("click", function (e) {
     if (sidebarFileElement) {
@@ -29,17 +35,18 @@ sidebarSelect.addEventListener("click", function (e) {
     e.preventDefault();
 }, false);
 
-
 $("#sidebarSubmit").click(function (e) {
     e.preventDefault();
-    let pins = database.ref('pins');
+    let pins = database.ref('pins/unsorted');
     let address = $("#sidebarAddress").val();
 
     let pin = {
         'address': address,
         'place': $("#sidebarPlace").val(),
         'category': $("#sidebarCategory").val(),
-        'description': $("#sidebarDescription").val()
+        'description': $("#sidebarDescription").val(),
+        'lastIndexTimestamp': firebase.database.ServerValue.TIMESTAMP,
+        'score': 0
     };
 
     let newPin = pins.push();
@@ -104,7 +111,7 @@ $("#sidebarSubmit").click(function (e) {
                             "src": downloadURL,
                             "class": 'imgPreview'
                         });
-                        genPin(sidebarMarker, pin, $(markerImage).prop('outerHTML'));
+                        genPin(sidebarMarker, pin, $(markerImage).prop('outerHTML'), newPin.key);
                     });
                 } else {
                     pin.image = 'false';
@@ -113,7 +120,7 @@ $("#sidebarSubmit").click(function (e) {
                         "src": 'https://firebasestorage.googleapis.com/v0/b/getfrisk.appspot.com/o/images%2Fbutter-half-mural.jpg?alt=media&token=7517e8fc-ee5a-41f1-ae31-f61732726473',
                         "class": 'imgPreview'
                     });
-                    genPin(sidebarMarker, pin, $(markerImage).prop('outerHTML'));
+                    genPin(sidebarMarker, pin, $(markerImage).prop('outerHTML'), newPin.key);
                 }
             }
         }
@@ -142,8 +149,7 @@ function previewImage() {
 }
 
 function submitData(marker) {
-
-    let pins = database.ref('pins');
+    let pinRef = database.ref('pins/unsorted');
 
     let pin = {
         'address': marker.getTitle(),
@@ -151,10 +157,11 @@ function submitData(marker) {
         'place': $("#name").val(),
         'category': $("#type").val(),
         'description': $("#description").val(),
-        'lastIndexTimestamp': firebase.database.ServerValue.TIMESTAMP
+        'lastIndexTimestamp': firebase.database.ServerValue.TIMESTAMP,
+        'score': 0
     };
 
-    let newPin = pins.push();
+    let newPin = pinRef.push();
     let markerImage = new Image();
 
     if (document.getElementById('fileElement').value !== "") {
@@ -196,7 +203,7 @@ function submitData(marker) {
                 "src": downloadURL,
                 "class": 'imgPreview'
             });
-            genPin(marker, pin, $(markerImage).prop('outerHTML'));
+            genPin(marker, pin, $(markerImage).prop('outerHTML'), newPin.key);
         });
     } else {
         pin.image = 'false';
@@ -205,12 +212,12 @@ function submitData(marker) {
             "src": 'https://firebasestorage.googleapis.com/v0/b/getfrisk.appspot.com/o/images%2Fbutter-half-mural.jpg?alt=media&token=7517e8fc-ee5a-41f1-ae31-f61732726473',
             "class": 'imgPreview'
         });
-        genPin(marker, pin, $(markerImage).prop('outerHTML'));
+        genPin(marker, pin, $(markerImage).prop('outerHTML'), newPin.key);
     }
     infoWindow.close();
 }
 
-function genPin(marker, pin, img) {
+function genPin(marker, pin, img, pinKey) {
     google.maps.event.clearListeners(marker, 'click');
     let content = "<div class=iw-container>" +
         "<div class=iw-title>" + pin.place + "</div>" +
@@ -219,15 +226,17 @@ function genPin(marker, pin, img) {
         "<div class=iw-subTitle>Description: </div>" + pin.description + "<br>" +
         "<div class=iw-subTitle>Category:</div> " + pin.category +
         "<br></div>" +
-        "<button id=showModal>See More</button>" +
-        "<div class=iw-bottom-gradient></div></div>";
+        "<button id=showModal>See More</button>";
     marker.addListener('click', function (e) {
         messageWindow.setContent(content);
-
+        console.log(pin);
         currPin = pin;
+        currPinKey = pinKey;
+        currImg = img;
 
         google.maps.event.addListener(messageWindow, 'domready', function () {
             setWindowStyle();
+
         });
 
         messageWindow.open(map, marker);
@@ -235,20 +244,36 @@ function genPin(marker, pin, img) {
 }
 
 $(document).on('click', '#showModal', function(){
-    showModal(currPin);
+    showModal(currPin, currPinKey, currImg);
 });
 
-function showModal(pin){
+function showModal(pin, key, img){
     let dialog = document.querySelector('dialog');
     dialogPolyfill.registerDialog(dialog);
+    console.log(key);
 
-    // Now dialog acts like a native <dialog>.
+    let score = database.ref(`pins/unsorted/${key}/score`);
 
+    score.once('value', function(snapshot){
+        $("#modalVotes").text(snapshot.val());
+    });
+    $("#modalImage").attr('src', $(img).attr('src')).addClass('modalImage');
     $("#modalAddress").text(pin.address);
     $("#modalDescription").text(pin.description);
     $("#modalPlace").text(pin.place);
 
+
     dialog.showModal();
+
+    $("#modalUpvote").click(function(){
+        let currModalScore = $("#modalVotes").text();
+        currModalScore++;
+        console.log(currModalScore);
+        $("#modalVotes").text(currModalScore);
+        score.transaction(function(score){
+            return score +1;
+        });
+    });
 
     $(".close").click(function(){
         if (dialog.open){
@@ -259,9 +284,10 @@ function showModal(pin){
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: new google.maps.LatLng(-97.755996, 30.307182),
         zoom: 12
     });
+
+    map.setCenter(new google.maps.LatLng(30.307182,-97.755996));
 
     geoCoder = new google.maps.Geocoder();
     map.data.loadGeoJson('geo.json');
@@ -283,12 +309,11 @@ function initMap() {
                 'lng': position.coords.longitude,
             };
 
-            map.setCenter(pos);
-
             let circle = new google.maps.Circle({
                 center: pos,
                 radius: position.coords.accuracy
             });
+
             autocomplete.setBounds(circle.getBounds());
 
             let currPositionMarker = new google.maps.Marker({
@@ -313,7 +338,7 @@ function initMap() {
         maxWidth: 350
     });
 
-    let existingPins = database.ref('pins').orderByKey();
+    let existingPins = database.ref('pins/unsorted').orderByKey();
     existingPins.once("value", function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             let markerData = childSnapshot.val();
@@ -343,7 +368,7 @@ function initMap() {
                     });
                     console.log(markerImage);
 
-                    genPin(genMarker, markerData, $(markerImage).prop('outerHTML'));
+                    genPin(genMarker, markerData, $(markerImage).prop('outerHTML'), childSnapshot.key);
 
                 })
             } else {
@@ -351,7 +376,7 @@ function initMap() {
                     'src': 'https://firebasestorage.googleapis.com/v0/b/getfrisk.appspot.com/o/images%2Fbutter-half-mural.jpg?alt=media&token=7517e8fc-ee5a-41f1-ae31-f61732726473',
                     'class': 'imgPreview'
                 });
-                genPin(genMarker, markerData, $(markerImage).prop('outerHTML'));
+                genPin(genMarker, markerData, $(markerImage).prop('outerHTML'), childSnapshot.key);
             }
         });
     });
@@ -402,33 +427,21 @@ $("#search").click(function () {
         setMapOnAll(map);
         return;
     }
-
-    let searchQueryRef = database.ref('search/queries');
-
     setMapOnAll(null);
 
-    let searchRef = searchQueryRef.push(searchQuery);
+    let categoryRef = database.ref(`pins/${searchQuery}`);
 
-    setTimeout(function () {
-        let searchResults = database.ref('search/results/' + searchRef.key);
-        searchResults.on('value', function (snapshot) {
-            console.log(snapshot.val());
-            let pinRef = snapshot.val().hits;
-            console.log(pinRef);
+    categoryRef.once('value', function(snapshot){
+        snapshot.forEach(function(childSnapshot){
+            let address = childSnapshot.val().address;
 
-            for (let i = 0; i < pinRef.length; i++) {
-                let getPinLatLng = database.ref('pins/' + pinRef[i].objectID);
-
-                getPinLatLng.once('value', function (snapshot) {
-                    for (let j = 0; j < markers.length; j++) {
-                        if (snapshot.val().address === markers[j].address) {
-                            markers[j].marker.setMap(map);
-                        }
-                    }
-                });
+            for (let j = 0; j < markers.length; j++) {
+                if (address === markers[j].address) {
+                    markers[j].marker.setMap(map);
+                }
             }
-        })
-    }, 2000);
+        });
+    });
 });
 
 function setMapOnAll(map) {
@@ -492,9 +505,15 @@ $("#addPin").click(function () {
                                 '            <tr>' +
                                 '                <td>Type:</td>' +
                                 '                <td><select id=\'type\'> +' +
-                                '                    <option value=\'bar\' SELECTED>bar</option>' +
-                                '                    <option value=\'restaurant\'>restaurant</option>' +
-                                '                </select></td>' +
+                                '                    <option value=\'foodAndDrinks\' SELECTED>Food and Drinks</option>' +
+                                '                    <option value=\'activities\'>Activities</option>' +
+                                '                    <option value=\'funAndGames\'>Fun and Games</option>' +
+                                '                    <option value=\'art\'>Art</option>' +
+                                '                    <option value=\'shopping\'>Shopping</option>' +
+                                '                    <option value=\'junk\'>Junk</option>' +
+                                '                    <option value=\'other\'>Other</option>' +
+                                '                </select>' +
+                                '<select id=\'pinSubcategory\'></select></td>' +
                                 '            </tr>' +
                                 '            <tr>' +
                                 '                <td><input type=\'file\' style=\'display: none\' onchange=previewImage() id=\'fileElement\' accept=\'image/*\'><a href=\'#\' id=\'fileSelect\'>Select an Image (optional)</a></td>' +
@@ -507,7 +526,9 @@ $("#addPin").click(function () {
                             );
 
                             google.maps.event.addListener(infoWindow, 'domready', function () {
-                                setWindowStyle();
+     $("#type").change(function(){
+        subcategoryDisplay($("#type").val(), "pinSubcategory")
+     });                           setWindowStyle();
                             });
 
                             infoWindow.open(map, marker);
