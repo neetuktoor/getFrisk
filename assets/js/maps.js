@@ -37,6 +37,7 @@ sidebarSelect.addEventListener("click", function (e) {
 
 $("#sidebarSubmit").click(function (e) {
     e.preventDefault();
+
     let pins = database.ref('pins/unsorted');
     let address = $("#sidebarAddress").val();
 
@@ -112,6 +113,7 @@ $("#sidebarSubmit").click(function (e) {
                             "class": 'imgPreview'
                         });
                         genPin(sidebarMarker, pin, $(markerImage).prop('outerHTML'), newPin.key);
+                        $("#sideForm")[0].reset();
                     });
                 } else {
                     pin.image = 'false';
@@ -121,6 +123,7 @@ $("#sidebarSubmit").click(function (e) {
                         "class": 'imgPreview'
                     });
                     genPin(sidebarMarker, pin, $(markerImage).prop('outerHTML'), newPin.key);
+                    $("#sideForm")[0].reset();
                 }
             }
         }
@@ -236,7 +239,6 @@ function genPin(marker, pin, img, pinKey) {
 
         google.maps.event.addListener(messageWindow, 'domready', function () {
             setWindowStyle();
-
         });
 
         messageWindow.open(map, marker);
@@ -366,6 +368,7 @@ function initMap() {
                         'src': url,
                         'class': 'imgPreview'
                     });
+
                     console.log(markerImage);
 
                     genPin(genMarker, markerData, $(markerImage).prop('outerHTML'), childSnapshot.key);
@@ -505,15 +508,14 @@ $("#addPin").click(function () {
                                 '            <tr>' +
                                 '                <td>Type:</td>' +
                                 '                <td><select id=\'type\'> +' +
-                                '                    <option value=\'foodAndDrinks\' SELECTED>Food and Drinks</option>' +
-                                '                    <option value=\'activities\'>Activities</option>' +
-                                '                    <option value=\'funAndGames\'>Fun and Games</option>' +
-                                '                    <option value=\'art\'>Art</option>' +
-                                '                    <option value=\'shopping\'>Shopping</option>' +
-                                '                    <option value=\'junk\'>Junk</option>' +
-                                '                    <option value=\'other\'>Other</option>' +
+                                '                    <option value=\'Food\' SELECTED>Food</option>' +'                    <option value=\'Drinks\'>Drinks</option>' +
+                                '                    <option value=\'Activities\'>Activities</option>' +
+                                '                    <option value=\'Fun And Games\'>Fun and Games</option>' +
+                                '                    <option value=\'Art\'>Art</option>' +
+                                '                    <option value=\'Shopping\'>Shopping</option>' +
+                                '                    <option value=\'Junk\'>Nature</option>' +
+                                '                    <option value=\'Music & Performance\'>Music & Performance</option>' +
                                 '                </select>' +
-                                '<select id=\'pinSubcategory\'></select></td>' +
                                 '            </tr>' +
                                 '            <tr>' +
                                 '                <td><input type=\'file\' style=\'display: none\' onchange=previewImage() id=\'fileElement\' accept=\'image/*\'><a href=\'#\' id=\'fileSelect\'>Select an Image (optional)</a></td>' +

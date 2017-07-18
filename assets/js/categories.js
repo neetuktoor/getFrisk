@@ -74,30 +74,35 @@ function getCategory(category){
 }
 
 function genCard(data, key) {
-    let imgSource;
-    let getLatLng = new google.maps.LatLng(data.latLng);
-    let imgStorage = storage.ref('images/' + getLatLng.toString());
+     let imgSource;
+     let getLatLng = new google.maps.LatLng(data.latLng);
 
-    if (data.image === "true") {
-        imgStorage.getDownloadURL().then(function (url) {
-            imgSource = url;
-        });
-    } else {
-        imgSource='https://firebasestorage.googleapis.com/v0/b/getfrisk.appspot.com/o/images%2Fbutter-half-mural.jpg?alt=media&token=7517e8fc-ee5a-41f1-ae31-f61732726473'
-    }
+     let imgStorage = storage.ref('images/' + getLatLng.toString());
 
+     if(data.image === "true"){
+         imgStorage.getDownloadURL().then(function(url){
+             createCard(data, url, key);
+         })
+     } else {
+         imgSource='https://firebasestorage.googleapis.com/v0/b/getfrisk.appspot.com/o/images%2Fbutter-half-mural.jpg?alt=media&token=7517e8fc-ee5a-41f1-ae31-f61732726473';
+         createCard(data, imgSource, key);
+     }
+}
+
+function createCard(data, url, key){
+    console.log(url);
     $itemsGrid.prepend($("<div>")
         .addClass("mdl-cell mdl-cell--3-col")
         .append($("<div>")
             .addClass("demo-card-square mdl-card mdl-shadow--2dp locationCard")
             .css({
-                "background-image": "url("+imgSource+")",
+                'background-image' : `url('${url}')`,
                 "background-size": "cover"
             })
             .append($("<div>")
                     .addClass("mdl-card__title mdl-card--expand").append($("<h2>")
-                    .addClass("mdl-card__title-text")
-                    .text(data.place))
+                        .addClass("mdl-card__title-text")
+                        .text(data.place))
                 , $("<div>")
                     .addClass("mdl-card__supporting-text")
                     .text(data.description)
