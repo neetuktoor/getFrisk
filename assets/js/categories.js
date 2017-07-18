@@ -91,7 +91,7 @@ function genCard(data, key) {
 
 function createCard(data, url, key){
     console.log(url);
-    $itemsGrid.prepend($("<div>")
+    $itemsGrid.append($("<div>")
         .addClass("mdl-cell mdl-cell--3-col")
         .append($("<div>")
             .addClass("demo-card-square mdl-card mdl-shadow--2dp locationCard")
