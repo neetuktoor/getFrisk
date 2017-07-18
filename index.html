@@ -20,24 +20,37 @@
       <div class="mdl-layout__header-row">
         <!-- Title -->
         <span class="mdl-layout-title">FRISK<small>  see something</small></span>
-        <!-- Add spacer, to align navigation to the right -->
+        <!-- Spacer -->
         <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
+        <!-- Navigation.  -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <form class="search">
+            <input type="text" placeholder="Search..." required>
+            <input type="button" value="Search">
+          </form>
+          <a class="mdl-navigation__link" href="">Add a Location</a>
+          <a class="mdl-navigation__link" href="">Categories</a>
+          <a class="mdl-navigation__link" href="index.html">Home</a>
         </nav>
       </div>
     </header>
     <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Title</span>
+      <span class="mdl-layout-title">getFrisk</span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Categories</a>
+        <a class="mdl-navigation__link" href="">Add a Location</a>
+        <a class="mdl-navigation__link" href="">Activities</a>
+        <a class="mdl-navigation__link" href="">Art</a>
+        <a class="mdl-navigation__link" href="">Booze</a>
+        <a class="mdl-navigation__link" href="">The Great Outdoors</a>
+        <a class="mdl-navigation__link" href="">Fun and Games</a>
+        <a class="mdl-navigation__link" href="">Food</a>
+        <a class="mdl-navigation__link" href="">Shops</a>
+        <a class="mdl-navigation__link" href="">Live Events</a>
+        <form class="search">
+          <input type="text" placeholder="Search..." required>
+          <input type="button" value="Search">
+        </form>
       </nav>
     </div>
     <main class="mdl-layout__content">
@@ -50,15 +63,13 @@
   <br>
   <br>
   <br>
-
-
   <!---Banner Image and Site Description--->
   <div class="demo-card-wide mdl-card mdl-shadow--2dp" id="imageBannerHome">
     <div class="mdl-card__title" id="imageBannerTitle">
       <div class="textBoxIndex">
         <p id="homePageText"> Find and share the most interesting creations, locations, people, and experiences in Austin, TX</p>
       </div>
-      </div>
+    </div>
     <div class="mdl-card__supporting-text" id="homepageTitleText">
       <p id="homepagetext">Discover locations</p>
     </div>
@@ -71,136 +82,92 @@
 
   <!-- Image card -->
   <div class="mdl-grid" id="imageBox">
-    <div class="mdl-cell mdl-cell--3-col">
-      <div class="demo-card-image mdl-card mdl-shadow--2dp" id="nearbyImageCard">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="demo-card-image mdl-card mdl-shadow--2dp imageCards22" id="HighestRatedImageCard">
         <div class="mdl-card__title mdl-card--expand"></div>
         <div class="mdl-card__actions">
-          <a href="nearby.html"class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
-        Nearby
-        </a>
-        </div>
-        </div>
-      </div>
-
-  <div class="mdl-cell mdl-cell--3-col">
-    <div class="demo-card-image mdl-card mdl-shadow--2dp" id="HighestRatedImageCard">
-      <div class="mdl-card__title mdl-card--expand"></div>
-      <div class="mdl-card__actions">
-        <a href="highestrated.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
    Highest Rated
 </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="mdl-cell mdl-cell--3-col">
-    <div class="demo-card-image mdl-card mdl-shadow--2dp" id="NewestImageCard">
-      <div class="mdl-card__title mdl-card--expand"></div>
-      <div class="mdl-card__actions">
-        <a href="newest.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="demo-card-image mdl-card mdl-shadow--2dp imageCards22" id="NewestImageCard">
+        <div class="mdl-card__title mdl-card--expand"></div>
+        <div class="mdl-card__actions">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
    Newest
 </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="mdl-cell mdl-cell--3-col">
-    <div class="demo-card-image mdl-card mdl-shadow--2dp" id="PicsImageCard">
-      <div class="mdl-card__title mdl-card--expand"></div>
-      <div class="mdl-card__actions">
-        <a href="ourpicks.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="demo-card-image mdl-card mdl-shadow--2dp imageCards22" id="PicsImageCard">
+        <div class="mdl-card__title mdl-card--expand"></div>
+        <div class="mdl-card__actions">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
    Our Favs
 </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="mdl-grid submitSection">
-  <div class="mdl-cell mdl-cell--5-col">
-    <p id="submitText">Share your discoveries with the community here on Frisk</p>
-  </div>
-  <div class="mdl-cell mdl-cell--7-col">
-<div class="demo-card-wide mdl-card mdl-shadow--2dp submitYourOwn">
-  <div class="mdl-card__title" id="shareImage">
-    <h2 class="mdl-card__title-text"></h2>
-  </div>
-  <div class="mdl-card__supporting-text">Submit your discoveries here!</div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a href="" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="sumbmitYourOwnButton">
+  <div class="mdl-grid submitSection">
+    <div class="mdl-cell mdl-cell--5-col">
+      <p id="submitText">Share your discoveries with the community here on Frisk</p>
+    </div>
+    <div class="mdl-cell mdl-cell--7-col">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp submitYourOwn">
+        <div class="mdl-card__title" id="shareImage">
+          <h2 class="mdl-card__title-text"></h2>
+        </div>
+        <div class="mdl-card__supporting-text">Submit your discoveries here!</div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="sumbmitYourOwnButton">
     Click Here to Share
     </a>
-  </div>
-</div>
-</div>
-</div>
-
-<hr>
-<p id="categoryBreak"> YOU NEVER KNOW WHAT IS AROUND THE CORNER</p>
-
-  <!---Category Section--->
-  <div class="mdl-grid" id="categoryHome">
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryBoxes">
-        <div class="mdl-card__title" id="homeGraffCard">
-          <h1 class="mdl-card__title-text">Graffiti</h1>
-        </div>
-        <div class="mdl-card__supporting-text">
-          Find the latest and greatest street art in Austin
-          <br>
-          <br>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <a href="graffiti.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
-  Check it out
-  </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryBoxes">
-        <div class="mdl-card__title" id="homeMediaCard">
-          <h1 class="mdl-card__title-text">Junk Art</h1>
-        </div>
-        <div class="mdl-card__supporting-text">
-One mans trash is another mans treasure, find incredible works here
-          <br>
-          <br>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <a href="junk.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
-  Check it out
-  </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory segmentBoxes1">
-        <div class="mdl-card__title" id="homeOddCard">
-          <h1 class="mdl-card__title-text">Parties and Events</h1>
-        </div>
-        <div class="mdl-card__supporting-text"> From derbys to birthday parties for cartoons find out what your next move could be
-          <br>
-          <br>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <a href="parties.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
-   Check it out
-  </a>
         </div>
       </div>
     </div>
   </div>
-<hr>
-  <h1 id="categoryBreak">DISCOVER ART, FOOD, AND ACTIVITIES</h1>
 
+  <hr>
+  <h1 id="categoryBreak">DISCOVER ART, FOOD, AND OTHER CATEGORIES</h1>
+
+  <hr>
+  <p id="categoryBreak2">SORT LOCATIONS</p>
+  <div class="mdl-grid sortbuttons">
+    <div class="mdl-cell mdl-cell--2-col">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect sortButton">
+  Just Added
+</button>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect sortButton">
+  Highest Rated
+</button>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect sortButton">
+  Alphabet  A-Z
+</button>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect sortButton">
+  Alphabet Z-A
+</button>
+    </div>
+  </div>
 
   <div class="mdl-grid" id="categoryCardsGrid">
-    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-cell mdl-cell--3-col">
       <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
         <div class="mdl-card__title" id="foodanddrinkimage">
-          <h1 class="mdl-card__title-text">Booze and Grub</h1>
+          <h1 class="mdl-card__title-text">Booze</h1>
         </div>
         <div class="mdl-card__supporting-text">
           On the hunt for the largest margarita, tastiest nachos, or ugliest desert?
@@ -208,13 +175,13 @@ One mans trash is another mans treasure, find incredible works here
           <br>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a href="fooddrinkcategory.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
-    Discover Crazy Drinks
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
+    Check out the dranks!
     </a>
         </div>
       </div>
     </div>
-    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-cell mdl-cell--3-col">
       <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
         <div class="mdl-card__title" id="activitiesimage">
           <h1 class="mdl-card__title-text">Activities</h1>
@@ -225,14 +192,14 @@ One mans trash is another mans treasure, find incredible works here
           <br>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a href="activitiescategory.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
-       Do Cool Things
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
+       Do Cool Things!
     </a>
         </div>
       </div>
     </div>
 
-    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-cell mdl-cell--3-col">
       <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
         <div class="mdl-card__title" id="artimage">
           <h1 class="mdl-card__title-text">Art</h1>
@@ -241,27 +208,101 @@ One mans trash is another mans treasure, find incredible works here
           Come inside to discover the cities most interesting graphiti, mixed media, and reclaimed treasures
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a href="artcategory.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
+     Find Cool Art!
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
+        <div class="mdl-card__title" id="foodEventsCard">
+          <h1 class="mdl-card__title-text">Food</h1>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Come inside to discover the cities most interesting graphiti, mixed media, and reclaimed treasures
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
+     Eat up!
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
+        <div class="mdl-card__title" id="performanceImageCard">
+          <h1 class="mdl-card__title-text">Live Events</h1>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Come inside to discover the cities most interesting graphiti, mixed media, and reclaimed treasures
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
      Find Cool Art
     </a>
         </div>
       </div>
     </div>
+    <div class="mdl-cell mdl-cell--3-col">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
+        <div class="mdl-card__title" id="funCard">
+          <h1 class="mdl-card__title-text">Fun and Games</h1>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Come inside to discover the cities most interesting graphiti, mixed media, and reclaimed treasures
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
+     Let the games begin!
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
+        <div class="mdl-card__title" id="natureCard">
+          <h1 class="mdl-card__title-text">The Great Outdoors</h1>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Come inside to discover the cities most interesting graphiti, mixed media, and reclaimed treasures
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
+     Get outside!
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
+        <div class="mdl-card__title" id="shopsCard">
+          <h1 class="mdl-card__title-text">Shops</h1>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Come inside to discover the cities most interesting graphiti, mixed media, and reclaimed treasures
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
+     Help the local economy!
+    </a>
+        </div>
+      </div>
+    </div>
   </div>
-
   <footer class="mdl-mini-footer">
     <div class="mdl-mini-footer__left-section">
       <ul class="mdl-mini-footer__link-list">
         <li><a href="#">Help</a></li>
         <li><a href="#">Privacy and Terms</a></li>
         <li><a href="#">User Agreement</a></li>
+        <li><a href="#">Contact Us</a></li>
       </ul>
     </div>
     <div class="mdl-mini-footer__right-section">
       <img src="assets/images/FriskLogo.png" alt="Mountain View" style="width:150px;height:75px;">
     </div>
   </footer>
-
 </body>
 
 </html>
