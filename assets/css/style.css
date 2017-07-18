@@ -216,3 +216,48 @@ select{
     top:2px;
     left:2px;
 }
+
+/*css under here is for the panel*/
+#mapPanel {
+    width: 500px;
+    opacity: .9;
+    padding-top: 30px;
+
+}
+
+#addPin {
+    margin-left: 54px;
+    background-color: #e34c26;
+    position: relative;
+    padding: 10px;
+    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Amatic SC', cursive;
+}
+
+#category {
+    margin-left: 55px;
+}
+
+#sidebarSubmit {
+    background-color: #e34c26;
+    color: white;
+    width: 250px;
+    height: 35px;
+    font-size: 14px;
+
+}
+
+#sidebarFileSelect {
+    color: teal;
+}
+
+#search {
+    width: 70px;
+    height: 30px;
+    background-color: #e34c26;
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
