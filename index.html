@@ -55,10 +55,12 @@
   <!---Banner Image and Site Description--->
   <div class="demo-card-wide mdl-card mdl-shadow--2dp" id="imageBannerHome">
     <div class="mdl-card__title" id="imageBannerTitle">
-      <p id="homePageText"> Find weird, interesting, and creative creations that are off the beaten path in Austin, Tx</p>
-    </div>
+      <div class="textBoxIndex">
+        <p id="homePageText"> Find and share the most interesting creations, locations, people, and experiences in Austin, TX</p>
+      </div>
+      </div>
     <div class="mdl-card__supporting-text" id="homepageTitleText">
-      <p id="homepagetext">Discover locations through a variety of different ways</p>
+      <p id="homepagetext">Discover locations</p>
     </div>
   </div>
 
@@ -73,18 +75,18 @@
       <div class="demo-card-image mdl-card mdl-shadow--2dp" id="nearbyImageCard">
         <div class="mdl-card__title mdl-card--expand"></div>
         <div class="mdl-card__actions">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
-     Nearby
-  </a>
+          <a href="nearby.html"class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
+        Nearby
+        </a>
+        </div>
         </div>
       </div>
-    </div>
 
   <div class="mdl-cell mdl-cell--3-col">
     <div class="demo-card-image mdl-card mdl-shadow--2dp" id="HighestRatedImageCard">
       <div class="mdl-card__title mdl-card--expand"></div>
       <div class="mdl-card__actions">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
+        <a href="highestrated.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
    Highest Rated
 </a>
       </div>
@@ -95,7 +97,7 @@
     <div class="demo-card-image mdl-card mdl-shadow--2dp" id="NewestImageCard">
       <div class="mdl-card__title mdl-card--expand"></div>
       <div class="mdl-card__actions">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
+        <a href="newest.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
    Newest
 </a>
       </div>
@@ -106,7 +108,7 @@
     <div class="demo-card-image mdl-card mdl-shadow--2dp" id="PicsImageCard">
       <div class="mdl-card__title mdl-card--expand"></div>
       <div class="mdl-card__actions">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
+        <a href="ourpicks.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="imageButton">
    Our Favs
 </a>
       </div>
@@ -114,8 +116,27 @@
   </div>
 </div>
 
+<div class="mdl-grid submitSection">
+  <div class="mdl-cell mdl-cell--5-col">
+    <p id="submitText">Share your discoveries with the community here on Frisk</p>
+  </div>
+  <div class="mdl-cell mdl-cell--7-col">
+<div class="demo-card-wide mdl-card mdl-shadow--2dp submitYourOwn">
+  <div class="mdl-card__title" id="shareImage">
+    <h2 class="mdl-card__title-text"></h2>
+  </div>
+  <div class="mdl-card__supporting-text">Submit your discoveries here!</div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a href="" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="sumbmitYourOwnButton">
+    Click Here to Share
+    </a>
+  </div>
+</div>
+</div>
+</div>
+
 <hr>
-<p id="categoryBreak"> EXPLORE THE MAIN CATEGORIES</p>
+<p id="categoryBreak"> YOU NEVER KNOW WHAT IS AROUND THE CORNER</p>
 
   <!---Category Section--->
   <div class="mdl-grid" id="categoryHome">
@@ -130,7 +151,7 @@
           <br>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a href="graffiti.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
   Check it out
   </a>
         </div>
@@ -147,8 +168,8 @@ One mans trash is another mans treasure, find incredible works here
           <br>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-     Check it out
+          <a href="junk.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
+  Check it out
   </a>
         </div>
       </div>
@@ -164,7 +185,7 @@ One mans trash is another mans treasure, find incredible works here
           <br>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a href="parties.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
    Check it out
   </a>
         </div>
@@ -172,12 +193,12 @@ One mans trash is another mans treasure, find incredible works here
     </div>
   </div>
 <hr>
-  <h1 id="categoryBreak">DISCOVER ART AND FOOD</h1>
+  <h1 id="categoryBreak">DISCOVER ART, FOOD, AND ACTIVITIES</h1>
 
 
   <div class="mdl-grid" id="categoryCardsGrid">
     <div class="mdl-cell mdl-cell--4-col">
-      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory" id="categoryCards">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
         <div class="mdl-card__title" id="foodanddrinkimage">
           <h1 class="mdl-card__title-text">Booze and Grub</h1>
         </div>
@@ -187,14 +208,14 @@ One mans trash is another mans treasure, find incredible works here
           <br>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a href="fooddrinkcategory.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
     Discover Crazy Drinks
     </a>
         </div>
       </div>
     </div>
     <div class="mdl-cell mdl-cell--4-col">
-      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory" id="categoryCards">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
         <div class="mdl-card__title" id="activitiesimage">
           <h1 class="mdl-card__title-text">Activities</h1>
         </div>
@@ -204,7 +225,7 @@ One mans trash is another mans treasure, find incredible works here
           <br>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a href="activitiescategory.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
        Do Cool Things
     </a>
         </div>
@@ -212,7 +233,7 @@ One mans trash is another mans treasure, find incredible works here
     </div>
 
     <div class="mdl-cell mdl-cell--4-col">
-      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory" id="categoryCards">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dpartCategory categoryCards">
         <div class="mdl-card__title" id="artimage">
           <h1 class="mdl-card__title-text">Art</h1>
         </div>
@@ -220,7 +241,7 @@ One mans trash is another mans treasure, find incredible works here
           Come inside to discover the cities most interesting graphiti, mixed media, and reclaimed treasures
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a href="artcategory.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect catHomeButton">
      Find Cool Art
     </a>
         </div>

@@ -11,12 +11,28 @@
 }
 
 #homePageText {
-  font-size: 35px;
+  font-size: 50px;
   text-align: center;
   font-weight: bold;
-  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 120%;
-  text-shadow: 1.25px 1.25px 0px #000;
+  text-shadow: 2px 2px 0px #000;
+  width: 70%;
+  text-align: center;
+  color: white;
+}
+
+#secondaryPageText {
+  margin-left: 25px;
+  font-size: 50px;
+  line-height: 120%;
+  color: white;
+  background-color: #cc5500;
+  width: 300px;
+  border-radius: 20px 0 20px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #homepagetext {
@@ -24,7 +40,11 @@
   font-weight: bolder;
 }
 
-.categoryBoxes{
+#categoryHome {
+  background-color: lightgrey;
+}
+
+.categoryBoxes {
   width: 300px;
   border-color: lightgrey;
   border-width: thin;
@@ -39,22 +59,59 @@
   color: #fff;
 }
 
+.submitYourOwn {
+  text-align: center;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%
+}
+
+#submitText {
+  text-align: center;
+  margin-left: 50px;
+  font-size: 30px;
+  line-height: 200%;
+  color: darkgrey;
+  font-weight: 900;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  color: #cc5500;
+}
+
+#sumbmitYourOwnButton {
+  background-color: #cc5500;
+  color: white;
+  width: 80%
+}
+
+#shareImage {
+  background: url('../images/oldaustin.jpg') center / cover;
+}
+
 #segmentBox {
   margin-left: 30px;
-  background-color: lightgrey;
   width: 100%
 }
 
 #homeGraffCard {
   background: url('../images/frog.jpg') center / cover;
+  text-shadow: 1.5px 1.5px 0px #000;
+  font-weight: bold;
 }
 
 #homeMediaCard {
   background: url('../images/austin.jpeg') center / cover;
+  text-shadow: 1.5px 1.5px 0px #000;
+  font-weight: bold;
 }
 
 #homeOddCard {
   background: url('../images/roller.jpeg') center / cover;
+  text-shadow: 1.5px 1.5px 0px #000;
+  font-weight: bold;
 }
 
 #categoryBreak {
@@ -64,21 +121,23 @@
   font-weight: bold;
 }
 
-#categoryCardsGrid {
-  background-color: lightgray;
-}
+#categoryCardsGrid {}
 
-#categoryCards {
+.categoryCards {
   margin: 25px;
   width: 300px;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: thin;
 }
 
-#categoryCards .mdl-card__title-text {
+.categoryCards .mdl-card__title-text {
   font-weight: bold;
   background-color: #cc5500;
   width: 100%;
   border-radius: 5px;
-  margin-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -130,107 +189,83 @@
 #HighestRatedImageCard {
   background: url('../images/butter.jpg') center / cover;
 }
-
 #imageBox {
   background-color: lightgrey;
 }
-
 #imageButton {
   color: white;
+  text-shadow: 1px 1px 0px #000;
 }
-
 .sortbuttons {
   margin-left: 300px;
 }
-
 .sortButton {
   background-color: #cc5500;
   border-radius: 10px;
   color: white;
 }
-
 .locationCard {
   width: 300px;
   height: 300px;
 }
-
 #artBannerTitle {
   color: #fff;
   height: 200px;
   background: url('../images/robots.jpg') center / cover;
 }
-
 #artBannerHome {
   width: 100%;
 }
-
 #foodBannerTitle {
   background: url('../images/foodbanner.jpg') center / cover;
-
 }
-
 #stoopidDrinkCard {
   background: url('../images/marg.jpeg') center / cover;
-
 }
-
 #foodTruckCard {
   background: url('../images/foodtruck.jpg') center / cover;
 }
-
 #ridicFoodCard {
   background: url('../images/bangers.jpg') center / cover;
 }
-
 #foodEventsCard {
   background: url('../images/foodevent.jpg') center / cover;
 }
-
 #foodBannerHome {
   width: 100%;
 }
-
 #actBannerHome {
   width: 100%;
 }
-
 #activitiesBannerTitle {
   background: url('../images/party.jpg') center / cover;
-
 }
-
 #natureCard {
   background: url('../images/hippy.jpg') center / cover;
-
 }
-
 #shopsCard {
   background: url('../images/toystore.jpg') center / cover;
-
 }
-
 #partiesCard {
   background: url('../images/eor.jpg') center / cover;
-
 }
-
 #funCard {
   background: url('../images/bike.jpg') center / cover;
-
 }
-
 #graffitiImageCard {
   background: url('../images/graffitipark.jpeg') center / cover;
-
 }
 #mixedImageCard {
   background: url('../images/mixed.jpeg') center / cover;
-
 }
 #junkImageCard {
   background: url('../images/junkart.jpg') center / cover;
 }
 #performanceImageCard {
   background: url('../images/performance.jpg') center / cover;
-
+}
+.catHomeButton {
+  border-width: thin;
+  border-color: lightgrey;
+  background-color: lightgrey;
 }
