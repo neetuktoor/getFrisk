@@ -15,7 +15,6 @@ let $itemsGrid = $("<div id='itemsGrid' class='mdl-grid'>");
 
 let detachedItems;
 
-
 $(document).on('click', '.catHomeButton', function () {
     console.log($(this).data("category"));
     sortButton($(this).data("category"));
@@ -74,7 +73,7 @@ function getAlphabetical(direction) {
 }
 
 function getLatest() {
-    let latestRef = database.ref('pins/unsorted').limitToLast(4);
+    let latestRef = database.ref('pins/unsorted').limitToLast(8);
     latestRef.once('value', function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             genCard(childSnapshot.val(), childSnapshot.key, "forward");

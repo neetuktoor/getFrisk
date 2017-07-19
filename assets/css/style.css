@@ -1,500 +1,627 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import "https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic";
 
+@import "https://fonts.googleapis.com/css?family=Pacifico";
 
-html, body {
-    height: 80%;
-    margin: 0;
-    padding: 0;
+#HighestRatedImageCard {
+    background:url(../images/butter.jpg) center / cover;
+}
+
+#NewestImageCard {
+    background:url(../images/doughnut.jpeg) center / cover;
+}
+
+#PicsImageCard {
+    background:url(../images/bum.png) center / cover;
+}
+
+#actBannerHome {
+    width:100%;
+}
+
+#activitiesBannerTitle {
+    background:url(../images/party.jpg) center / cover;
+}
+
+#activitiesimage {
+    background:url(../images/chicken.jpg) center / cover;
+}
+
+#addAPin {
+    font-family:'Pacifico',cursive
+}
+
+#addPin {
+    margin-left:54px;
+    background-color:#c50;
+    font-family:'Amatic SC',cursive
+}
+
+#artBannerHome {
+    width:100%;
+}
+
+#artBannerTitle {
+    color:#fff;
+    height:200px;
+    background:url(../images/robots.jpg) center / cover;
+}
+
+#artimage {
+    background:url(../images/art.jpeg) center / cover;
+}
+
+#category {
+    margin-left:55px
+}
+
+#categoryBreak {
+    text-align:center;
+    font-weight:700;
+    font-size:25px;
+    color:grey;
+    height:50px;
+    margin-top:50px
+}
+
+#categoryBreak2 {
+    text-align:center;
+    font-size:12px;
+    color:grey;
+    font-weight:700;
+    height:50px;
+    margin-top:50px
+}
+
+#categoryCards {
+    margin:25px;
+    width:300px
+}
+
+#categoryCards .mdl-card__title-text {
+    font-weight:700;
+    background-color:#c50;
+    width:100%;
+    border-radius:5px;
+    margin-left:10px
+}
+
+#categoryCardsGrid {
+    background-color:lightgray
+}
+
+#categoryHome {
+    background-color:#d3d3d3
+}
+
+#foodBannerHome {
+    width:100%;
+}
+
+#foodBannerTitle {
+    background:url(../images/foodbanner.jpg) center / cover;
+}
+
+#foodEventsCard {
+    background:url(../images/foodevent.jpg) center / cover;
+}
+
+#foodTruckCard {
+    background:url(../images/foodtruck.jpg) center / cover;
+}
+
+#foodanddrinkimage {
+    background:url(../images/marg.jpeg) center / cover;
+}
+
+#funCard {
+    background:url(../images/bike.jpg) center / cover;
+}
+
+#graffitiImageCard {
+    background:url(../images/graffitipark.jpeg) center / cover;
+}
+
+#homeGraffCard {
+    background:url(../images/frog.jpg) center / cover;
+    text-shadow:1.5px 1.5px 0 #000;
+    font-weight:700
+}
+
+#homeMediaCard {
+    background:url(../images/austin.jpeg) center / cover;
+    text-shadow:1.5px 1.5px 0 #000;
+    font-weight:700
+}
+
+#homeOddCard {
+    background:url(../images/roller.jpeg) center / cover;
+    text-shadow:1.5px 1.5px 0 #000;
+    font-weight:700
+}
+
+#homePageText {
+    font-size:50px;
+    text-align:center;
+    font-weight:700;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:120%;
+    text-shadow:2px 2px 0 #000;
+    width:70%;
+    color:#fff
+}
+
+#homepagetext {
+    text-align:center;
+    font-weight:bolder
+}
+
+#imageBannerHome {
+    width:100%;
+}
+
+#imageBannerTitle {
+    color:#fff;
+    height:400px;
+    background:url(../images/austin.jpeg) center / cover;
+}
+
+#imageBox {
+    background-color:#d3d3d3;
+}
+
+#imageButton {
+    color:#fff;
+    text-shadow:1px 1px 0 #000
+}
+
+#junkImageCard {
+    background:url(../images/junkart.jpg) center / cover;
 }
 
 #mainHolder {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.imgPreview {
-    height: 50px;
-    width: 50px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row
 }
 
 #map {
-    margin: 0;
-    padding: 0;
-    width: 80%;
-    height: 100%;
-}
-
-#smallMap{
-    width: 150px;
-    height: 150px;
+    margin:0;
+    padding:0;
+    width:80%;
+    height:100%
 }
 
 #map-canvas img {
-    max-width: none !important;
-}
-.gm-style-iw {
-    max-width: 350px !important;
-    top: 15px !important;
-    left: 0px !important;
-    background-color: #fff;
-    box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
-    border: 1px solid rgba(72, 181, 233, 0.6);
-    border-radius: 2px 2px 10px 10px;
+    max-width:none!important
 }
 
-.iw-container{
-    margin-bottom: 10px;
+#mapPanel {
+    width:20%;
+    opacity:.9;
+    padding-top:30px
 }
-.iw-container .iw-title {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    padding: 10px;
-    background-color: #48b5e9;
-    color: white;
-    margin: 0;
-    border-radius: 2px 2px 0 0;
+
+#mixedImageCard {
+    background:url(../images/mixed.jpeg) center / cover;
 }
-.iw-container .iw-content {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    margin-right: 1px;
-    padding: 15px 5px 20px 15px;
-    max-height: 140px;
-    overflow-y: auto;
-    overflow-x: hidden;
+
+#natureCard {
+    background:url(../images/hippy.jpg) center / cover;
 }
-.iw-content img {
-    float: right;
-    margin: 0 5px 5px 10px;
+
+#partiesCard {
+    background:url(../images/eor.jpg) center / cover;
 }
-.iw-subTitle {
-    font-size: 16px;
-    font-weight: 700;
-    padding: 5px 0;
+
+#performanceImageCard {
+    background:url(../images/performance.jpg) center / cover;
 }
-.iw-bottom-gradient {
-    position: absolute;
-    width: 326px;
-    height: 25px;
-    bottom: 10px;
-    right: 18px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+
+#ridicFoodCard {
+    background:url(../images/bangers.jpg) center / cover;
+}
+
+#search {
+    width:70px;
+    height:30px;
+    background-color:#c50;
+    color:#fff;
+    font-size:11px;
+    text-align:center;
+    padding-bottom:5px;
+    float:right
+}
+
+#secondaryPageText {
+    margin-left:25px;
+    font-size:50px;
+    line-height:120%;
+    color:#fff;
+    background-color:#c50;
+    width:300px;
+    border-radius:20px 0 20px;
+    text-align:center;
+    text-transform:uppercase
+}
+
+#segmentBox {
+    margin-left:30px;
+    background-color:#d3d3d3;
+    width:100%;
+}
+
+#shareImage {
+    background:url(../images/oldaustin.jpg) center / cover
+}
+
+#shopsCard {
+    background:url(../images/toystore.jpg) center / cover;
+}
+
+#sidebarFileSelect {
+    color:teal
+}
+
+#sidebarSubmit {
+    background-color:#c50;
+    color:#fff;
+    width:150px;
+    height:35px;
+    font-size:14px
+}
+
+#smallMap {
+    width:150px;
+    height:150px
+}
+
+#stoopidDrinkCard {
+    background:url(../images/marg.jpeg) center / cover;
+}
+
+#submitText {
+    text-align:center;
+    margin-left:50px;
+    font-size:30px;
+    line-height:200%;
+    font-weight:900;
+    margin-top:100px;
+    margin-right:auto;
+    padding-left:50px;
+    color:#c50
+}
+
+#sumbmitYourOwnButton {
+    background-color:#c50;
+    color:#fff;
+    width:80%
+}
+
+.catHomeButton {
+    border-width:thin;
+    border-color:#d3d3d3;
+    background-color:#d3d3d3
+}
+
+.categoryBoxes {
+    width:300px;
+    border-color:#d3d3d3;
+    border-width:thin;
+}
+
+.categoryCards {
+    margin:25px;
+    width:275px;
+    border-style:solid;
+    border-color:#d3d3d3;
+    border-width:thin
+}
+
+.categoryCards .mdl-card__title-text {
+    font-weight:700;
+    background-color:#c50;
+    width:100%;
+    border-radius:5px;
+    margin-left:auto;
+    margin-right:auto
+}
+
+.demo-card-image.mdl-card {
+    width:256px;
+    height:256px;
+    background:url(../images/tree.jpg) center / cover;
+}
+
+.demo-card-image>.mdl-card__actions {
+    height:52px;
+    padding:16px;
+    background:rgba(0,0,0,0.2);
+}
+
+.demo-card-image__filename {
+    color:#fff;
+    font-size:14px;
+}
+
+.demo-card-wide>.mdl-card__menu {
+    color:#fff;
+}
+
+.demo-card-wide>.mdl-card__title {
+    color:#fff;
+    height:176px;
 }
 
 .form-style-1 {
     margin:10px auto;
-    max-width: 400px;
-    padding: 20px 12px 10px 20px;
-    font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-.form-style-1 li {
-    padding: 0;
-    display: block;
-    list-style: none;
-    margin: 10px 0 0 0;
-}
-.form-style-1 label{
-    margin:0 0 3px 0;
-    padding:0px;
-    display:block;
-    font-weight: bold;
-}
-.form-style-1 input[type=text],
-.form-style-1 input[type=date],
-.form-style-1 input[type=datetime],
-.form-style-1 input[type=number],
-.form-style-1 input[type=search],
-.form-style-1 input[type=time],
-.form-style-1 input[type=url],
-.form-style-1 input[type=email],
-textarea,
-select{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    border:1px solid #BEBEBE;
-    padding: 7px;
-    margin:0px;
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    -o-transition: all 0.30s ease-in-out;
-    outline: none;
-}
-.form-style-1 input[type=text]:focus,
-.form-style-1 input[type=date]:focus,
-.form-style-1 input[type=datetime]:focus,
-.form-style-1 input[type=number]:focus,
-.form-style-1 input[type=search]:focus,
-.form-style-1 input[type=time]:focus,
-.form-style-1 input[type=url]:focus,
-.form-style-1 input[type=email]:focus,
-.form-style-1 textarea:focus,
-.form-style-1 select:focus{
-    -moz-box-shadow: 0 0 8px #88D5E9;
-    -webkit-box-shadow: 0 0 8px #88D5E9;
-    box-shadow: 0 0 8px #88D5E9;
-    border: 1px solid #88D5E9;
-}
-.form-style-1 .field-divided{
-    width: 49%;
+    max-width:400px;
+    padding:20px 12px 10px 20px;
+    font:13px "Lucida Sans Unicode","Lucida Grande",sans-serif
 }
 
-.form-style-1 .field-long{
-    width: 100%;
+.form-style-1 .field-divided {
+    width:49%
 }
-.form-style-1 .field-select{
-    width: 100%;
+
+.form-style-1 .field-long {
+    width:100%
 }
-.form-style-1 .field-textarea{
-    height: 100px;
+
+.form-style-1 .field-select {
+    width:100%
 }
-.form-style-1 input[type=submit], .form-style-1 input[type=button]{
-    background: #4B99AD;
-    padding: 8px 15px 8px 15px;
-    border: none;
-    color: #fff;
+
+.form-style-1 .field-textarea {
+    height:100px
 }
-.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
-    background: #4691A4;
+
+.form-style-1 .required {
+    color:red
+}
+
+.form-style-1 input[type=submit],.form-style-1 input[type=button] {
+    background:#4B99AD;
+    padding:8px 15px;
+    border:none;
+    color:#fff
+}
+
+.form-style-1 input[type=submit]:hover,.form-style-1 input[type=button]:hover {
+    background:#4691A4;
     box-shadow:none;
     -moz-box-shadow:none;
-    -webkit-box-shadow:none;
-}
-.form-style-1 .required{
-    color:red;
+    -webkit-box-shadow:none
 }
 
-/*the rating system CSS*/
-.rating {
-    float:left;
+.form-style-1 input[type=text],.form-style-1 input[type=date],.form-style-1 input[type=datetime],.form-style-1 input[type=number],.form-style-1 input[type=search],.form-style-1 input[type=time],.form-style-1 input[type=url],.form-style-1 input[type=email],textarea,select {
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    border:1px solid #BEBEBE;
+    padding:7px;
+    margin:0;
+    -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -ms-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
+    outline:none
 }
 
-/*Banner Image and Site Description--->*/
-
-#imageBannerHome {
-    width: 100%;
+.form-style-1 input[type=text]:focus,.form-style-1 input[type=date]:focus,.form-style-1 input[type=datetime]:focus,.form-style-1 input[type=number]:focus,.form-style-1 input[type=search]:focus,.form-style-1 input[type=time]:focus,.form-style-1 input[type=url]:focus,.form-style-1 input[type=email]:focus,.form-style-1 textarea:focus,.form-style-1 select:focus {
+    -moz-box-shadow:0 0 8px #88D5E9;
+    -webkit-box-shadow:0 0 8px #88D5E9;
+    box-shadow:0 0 8px #88D5E9;
+    border:1px solid #88D5E9
 }
 
-#imageBannerTitle {
-    color: #fff;
-    height: 400px;
-    background: url('../images/austin.jpeg') center / cover;
+.form-style-1 label {
+    margin:0 0 3px;
+    padding:0;
+    display:block;
+    font-weight:700
+}
+
+.form-style-1 li {
+    padding:0;
+    display:block;
+    list-style:none;
+    margin:10px 0 0
+}
+
+.gm-style-iw {
+    max-width:350px!important;
+    top:15px!important;
+    left:0!important;
+    background-color:#fff;
+    box-shadow:0 1px 6px rgba(178,178,178,0.6);
+    border:1px solid rgba(72,181,233,0.6);
+    border-radius:2px 2px 10px 10px
 }
 
 .homePageText {
-    font-size: 35px;
-    text-align: center;
-    font-weight: bold;
-    margin: 5px;
-    line-height: 120%;
-    text-shadow: 1.25px 1.25px 0px #000;
+    font-size:35px;
+    text-align:center;
+    font-weight:700;
+    margin:5px;
+    line-height:120%;
+    text-shadow:1.25px 1.25px 0 #000
 }
 
-.categoryBoxes{
-    width: 300px;
-    border-color: lightgrey;
-    border-width: thin;
+.imageCards22 {
+    margin-left:auto;
+    margin-right:auto
 }
 
-.demo-card-wide>.mdl-card__title {
-    color: #fff;
-    height: 176px;
+.imgPreview {
+    height:50px;
+    width:50px
 }
 
-.demo-card-wide>.mdl-card__menu {
-    color: #fff;
+.iw-bottom-gradient {
+    position:absolute;
+    width:326px;
+    height:25px;
+    bottom:10px;
+    right:18px;
+    background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background:-webkit-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background:-moz-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background:-ms-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%)
 }
 
-#segmentBox {
-    margin-left: 30px;
-    background-color: lightgrey;
-    width: 100%
+.iw-container {
+    margin-bottom:10px
 }
 
-#homeGraffCard {
-    background: url('../images/frog.jpg') center / cover;
+.iw-container .iw-content {
+    font-size:13px;
+    line-height:18px;
+    font-weight:400;
+    margin-right:1px;
+    padding:15px 5px 20px 15px;
+    max-height:140px;
+    overflow-y:auto;
+    overflow-x:hidden
 }
 
-#homeMediaCard {
-    background: url('../images/austin.jpeg') center / cover;
+.iw-container .iw-title {
+    padding:10px;
+    background-color:#48b5e9;
+    color:#fff;
+    margin:0;
+    border-radius:2px 2px 0 0;
+    font:400 22px 'Open Sans Condensed',sans-serif
 }
 
-#homeOddCard {
-    background: url('../images/roller.jpeg') center / cover;
+.iw-content img {
+    float:right;
+    margin:0 5px 5px 10px
 }
 
-#categoryBreak {
-    text-align: center;
-    font-size: 12px;
-    color: grey;
-    font-weight: bold;
-}
-
-#categoryCardsGrid {
-    background-color: lightgray;
-}
-
-#categoryCards {
-    margin: 25px;
-    width: 300px;
-}
-
-#categoryCards .mdl-card__title-text {
-    font-weight: bold;
-    background-color: #cc5500;
-    width: 100%;
-    border-radius: 5px;
-    margin-left: 10px;
-}
-
-.demo-card-wide>.mdl-card__title {
-    color: #fff;
-    height: 176px;
-}
-.demo-card-wide>.mdl-card__menu {
-    color: #fff;
-}
-#foodanddrinkimage {
-    background: url('../images/marg.jpeg') center / cover;
-}
-#artimage {
-    background: url('../images/art.jpeg') center / cover;
-}
-#activitiesimage {
-    background: url('../images/chicken.jpg') center / cover;
-}
-.mdl-mini-footer__link-list {
-    margin-top: 30px;
-}
-.mdl-mini-footer {
-    height: 30px;
-    background-color: #607d8b;
-}
-.demo-card-image.mdl-card {
-    width: 256px;
-    height: 256px;
-    background: url('../images/tree.jpg') center / cover;
-}
-.demo-card-image>.mdl-card__actions {
-    height: 52px;
-    padding: 16px;
-    background: rgba(0, 0, 0, 0.2);
-}
-.demo-card-image__filename {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-}
-#PicsImageCard {
-    background: url('../images/bum.png') center / cover;
-}
-#NewestImageCard {
-    background: url('../images/doughnut.jpeg') center / cover;
-}
-#HighestRatedImageCard {
-    background: url('../images/butter.jpg') center / cover;
-}
-
-#imageBox {
-    background-color: lightgrey;
-}
-
-.sortbuttons {
-    margin-left: 300px;
-}
-
-.sortButton {
-    background-color: #cc5500;
-    border-radius: 10px;
-    color: white;
+.iw-subTitle {
+    font-size:16px;
+    font-weight:700;
+    padding:5px 0
 }
 
 .locationCard {
-    width: 300px;
-    height: 300px;
+    width:300px;
+    height:300px;
+    width:300px;
+    height:300px
 }
 
-#artBannerTitle {
-    color: #fff;
-    height: 200px;
-    background: url('../images/robots.jpg') center / cover;
+.mdl-layout-title {
+    color:#fff;
+    color:#fff;
+    font-family:'Enriqueta',serif;
+    color:#fff;
+    font-family:Enriqueta,serif
 }
 
-#artBannerHome {
-    width: 100%;
+.mdl-layout__drawer {
+    background-color:#607d8b
 }
 
-#foodBannerTitle {
-    background: url('../images/foodbanner.jpg') center / cover;
-
+.mdl-mini-footer {
+    height:30px;
+    background-color:#607d8b;
+    height:30px;
+    background-color:#607d8b
 }
 
-#stoopidDrinkCard {
-    background: url('../images/marg.jpeg') center / cover;
-
+.mdl-mini-footer__link-list {
+    margin-top:30px;
+    margin-top:30px;
+    color:#fff;
+    font-family:'Enriqueta',serif
 }
 
-#foodTruckCard {
-    background: url('../images/foodtruck.jpg') center / cover;
-}
-
-#ridicFoodCard {
-    background: url('../images/bangers.jpg') center / cover;
-}
-
-#foodEventsCard {
-    background: url('../images/foodevent.jpg') center / cover;
-}
-
-#foodBannerHome {
-    width: 100%;
-}
-
-#actBannerHome {
-    width: 100%;
-}
-
-#activitiesBannerTitle {
-    background: url('../images/party.jpg') center / cover;
-
-}
-
-#natureCard {
-    background: url('../images/hippy.jpg') center / cover;
-
-}
-
-#shopsCard {
-    background: url('../images/toystore.jpg') center / cover;
-
-}
-
-#partiesCard {
-    background: url('../images/eor.jpg') center / cover;
-
-}
-
-#funCard {
-    background: url('../images/bike.jpg') center / cover;
-
-}
-
-#graffitiImageCard {
-    background: url('../images/graffitipark.jpeg') center / cover;
-
-}
-#mixedImageCard {
-    background: url('../images/mixed.jpeg') center / cover;
-
-}
-#junkImageCard {
-    background: url('../images/junkart.jpg') center / cover;
-}
-#performanceImageCard {
-    background: url('../images/performance.jpg') center / cover;
-}
-
-.wrap {
-    width: 200px;
-    min-width: 200px;
-    height: 60px;
-    position: relative;
-    display: table;
-}
-.wrap .votes {
-    -moz-border-radius: 3px 0 0 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px 0 0 3px;
-    display: table-cell;
-    min-width: 20px;
-    min-height: 60px;
-    background: #2980b9;
-    text-align: center;
-    color: #fff;
-    line-height: 60px;
-    font-weight: 700;
-}
-.wrap .button {
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    -moz-border-radius: 0 3px 3px 0;
-    -webkit-border-radius: 0;
-    border-radius: 0 3px 3px 0;
-    display: table-cell;
-    text-align: center;
-    color: #fff;
-    line-height: 60px;
-    min-height: 60px;
-    background: #3498db;
-    text-transform: uppercase;
-    font-weight: 700;
-    cursor: pointer;
-    border-left: 1px solid #3498db;
-}
-
-.wrap .button:hover {
-    background: #2980b9;
+.mdl-navigation__link {
+    color:#fff!important;
+    font-family:'Enriqueta',serif
 }
 
 .modalImage {
-    width: 100px;
-    height: 100px;
+    width:100px;
+    height:100px
 }
 
-/*css under here is for the panel*/
-#mapPanel {
-    width: 20%;
-    opacity: .9;
-    padding-top: 30px;
-
+.rating {
+    float:left
 }
 
-#addPin {
-    margin-left: 54px;
-    background-color: #cc5500;
-    /*position: relative;*/
-    /*    padding: 10px*/;
-    font-family: 'Amatic SC', cursive;
+.sortButton {
+    background-color:#c50;
+    border-radius:10px;
+    color:#fff;
+    background-color:#c50;
+    border-radius:10px;
+    color:#fff
 }
 
-#category {
-    margin-left: 55px;
+.sortbuttons {
+    margin-left:300px;
+    margin-left:300px
 }
 
-#sidebarSubmit {
-    background-color: #cc5500;
-    color: white;
-    width: 150px;
-    height: 35px;
-    font-size: 14px;
-
+.submitYourOwn {
+    text-align:center;
+    font-weight:700;
+    margin-left:auto;
+    margin-right:auto;
+    width:75%
 }
 
-#sidebarFileSelect {
-    color: teal;
+.wrap {
+    width:200px;
+    min-width:200px;
+    height:60px;
+    position:relative;
+    display:table
 }
 
-#search {
-    width: 70px;
-    height: 30px;
-    background-color: #cc5500;
-    color: white;
-    font-size: 11px;
-    text-align: center;
-    padding-bottom: 5px;
-    float: right;
+.wrap .button {
+    -moz-transition:.3s;
+    -o-transition:.3s;
+    -webkit-transition:.3s;
+    transition:.3s;
+    -moz-border-radius:0 3px 3px 0;
+    -webkit-border-radius:0;
+    border-radius:0 3px 3px 0;
+    display:table-cell;
+    text-align:center;
+    color:#fff;
+    line-height:60px;
+    min-height:60px;
+    background:#3498db;
+    text-transform:uppercase;
+    font-weight:700;
+    cursor:pointer;
+    border-left:1px solid #3498db
 }
 
-#addAPin {
-    font-family: 'Pacifico', cursive;
+.wrap .button:hover {
+    background:#2980b9
+}
+
+.wrap .votes {
+    -moz-border-radius:3px 0 0 3px;
+    -webkit-border-radius:3px;
+    border-radius:3px 0 0 3px;
+    display:table-cell;
+    min-width:20px;
+    min-height:60px;
+    background:#2980b9;
+    text-align:center;
+    color:#fff;
+    line-height:60px;
+    font-weight:700
+}
+
+html,body {
+    height:80%;
+    margin:0;
+    padding:0
 }
