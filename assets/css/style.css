@@ -1,8 +1,8 @@
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-/* Optional: Makes the sample page fill the window. */
+
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
+
 html, body {
-    height: 100%;
+    height: 80%;
     margin: 0;
     padding: 0;
 }
@@ -17,6 +17,11 @@ html, body {
     padding: 0;
     max-width: none;
     height: 75%;
+}
+
+#smallMap{
+    width: 150px;
+    height: 150px;
 }
 
 #map-canvas img {
@@ -165,56 +170,278 @@ select{
     float:left;
 }
 
-/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
-   follow these rules. Every browser that supports :checked also supports :not(), so
-   it doesn’t make the test unnecessarily selective */
-.rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-    clip:rect(0,0,0,0);
+/*Banner Image and Site Description--->*/
+
+#imageBannerHome {
+    width: 100%;
 }
 
-.rating:not(:checked) > label {
-    float:right;
-    width:1em;
-    padding:0 .1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:200%;
-    line-height:1.2;
-    color:#ddd;
-    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+#imageBannerTitle {
+    color: #fff;
+    height: 400px;
+    background: url('../images/austin.jpeg') center / cover;
 }
 
-.rating:not(:checked) > label:before {
-    content: '★ ';
+.homePageText {
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+    margin: 5px;
+    line-height: 120%;
+    text-shadow: 1.25px 1.25px 0px #000;
 }
 
-.rating > input:checked ~ label {
-    color: #f70;
-    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+.categoryBoxes{
+    width: 300px;
+    border-color: lightgrey;
+    border-width: thin;
 }
 
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: gold;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+.demo-card-wide>.mdl-card__title {
+    color: #fff;
+    height: 176px;
 }
 
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-    color: #ea0;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+.demo-card-wide>.mdl-card__menu {
+    color: #fff;
 }
 
-.rating > label:active {
-    position:relative;
-    top:2px;
-    left:2px;
+#segmentBox {
+    margin-left: 30px;
+    background-color: lightgrey;
+    width: 100%
+}
+
+#homeGraffCard {
+    background: url('../images/frog.jpg') center / cover;
+}
+
+#homeMediaCard {
+    background: url('../images/austin.jpeg') center / cover;
+}
+
+#homeOddCard {
+    background: url('../images/roller.jpeg') center / cover;
+}
+
+#categoryBreak {
+    text-align: center;
+    font-size: 12px;
+    color: grey;
+    font-weight: bold;
+}
+
+#categoryCardsGrid {
+    background-color: lightgray;
+}
+
+#categoryCards {
+    margin: 25px;
+    width: 300px;
+}
+
+#categoryCards .mdl-card__title-text {
+    font-weight: bold;
+    background-color: #cc5500;
+    width: 100%;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.demo-card-wide>.mdl-card__title {
+    color: #fff;
+    height: 176px;
+}
+.demo-card-wide>.mdl-card__menu {
+    color: #fff;
+}
+#foodanddrinkimage {
+    background: url('../images/marg.jpeg') center / cover;
+}
+#artimage {
+    background: url('../images/art.jpeg') center / cover;
+}
+#activitiesimage {
+    background: url('../images/chicken.jpg') center / cover;
+}
+.mdl-mini-footer__link-list {
+    margin-top: 30px;
+}
+.mdl-mini-footer {
+    height: 30px;
+    background-color: #607d8b;
+}
+.demo-card-image.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('../images/tree.jpg') center / cover;
+}
+.demo-card-image>.mdl-card__actions {
+    height: 52px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.demo-card-image__filename {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+#PicsImageCard {
+    background: url('../images/bum.png') center / cover;
+}
+#NewestImageCard {
+    background: url('../images/doughnut.jpeg') center / cover;
+}
+#HighestRatedImageCard {
+    background: url('../images/butter.jpg') center / cover;
+}
+
+#imageBox {
+    background-color: lightgrey;
+}
+
+.sortbuttons {
+    margin-left: 300px;
+}
+
+.sortButton {
+    background-color: #cc5500;
+    border-radius: 10px;
+    color: white;
+}
+
+.locationCard {
+    width: 300px;
+    height: 300px;
+}
+
+#artBannerTitle {
+    color: #fff;
+    height: 200px;
+    background: url('../images/robots.jpg') center / cover;
+}
+
+#artBannerHome {
+    width: 100%;
+}
+
+#foodBannerTitle {
+    background: url('../images/foodbanner.jpg') center / cover;
+
+}
+
+#stoopidDrinkCard {
+    background: url('../images/marg.jpeg') center / cover;
+
+}
+
+#foodTruckCard {
+    background: url('../images/foodtruck.jpg') center / cover;
+}
+
+#ridicFoodCard {
+    background: url('../images/bangers.jpg') center / cover;
+}
+
+#foodEventsCard {
+    background: url('../images/foodevent.jpg') center / cover;
+}
+
+#foodBannerHome {
+    width: 100%;
+}
+
+#actBannerHome {
+    width: 100%;
+}
+
+#activitiesBannerTitle {
+    background: url('../images/party.jpg') center / cover;
+
+}
+
+#natureCard {
+    background: url('../images/hippy.jpg') center / cover;
+
+}
+
+#shopsCard {
+    background: url('../images/toystore.jpg') center / cover;
+
+}
+
+#partiesCard {
+    background: url('../images/eor.jpg') center / cover;
+
+}
+
+#funCard {
+    background: url('../images/bike.jpg') center / cover;
+
+}
+
+#graffitiImageCard {
+    background: url('../images/graffitipark.jpeg') center / cover;
+
+}
+#mixedImageCard {
+    background: url('../images/mixed.jpeg') center / cover;
+
+}
+#junkImageCard {
+    background: url('../images/junkart.jpg') center / cover;
+}
+#performanceImageCard {
+    background: url('../images/performance.jpg') center / cover;
+}
+
+.wrap {
+    width: 200px;
+    min-width: 200px;
+    height: 60px;
+    position: relative;
+    display: table;
+}
+.wrap .votes {
+    -moz-border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px 0 0 3px;
+    display: table-cell;
+    min-width: 20px;
+    min-height: 60px;
+    background: #2980b9;
+    text-align: center;
+    color: #fff;
+    line-height: 60px;
+    font-weight: 700;
+}
+.wrap .button {
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -moz-border-radius: 0 3px 3px 0;
+    -webkit-border-radius: 0;
+    border-radius: 0 3px 3px 0;
+    display: table-cell;
+    text-align: center;
+    color: #fff;
+    line-height: 60px;
+    min-height: 60px;
+    background: #3498db;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    border-left: 1px solid #3498db;
+}
+
+.wrap .button:hover {
+    background: #2980b9;
+}
+
+.modalImage {
+    width: 100px;
+    height: 100px;
 }
 
 /*css under here is for the panel*/
@@ -227,9 +454,9 @@ select{
 
 #addPin {
     margin-left: 54px;
-    background-color: #e34c26;
-    position: relative;
-    padding: 10px;
+    background-color: #cc5500;
+    /*position: relative;*/
+/*    padding: 10px*/;
     font-family: 'Archivo Black', sans-serif;
     font-family: 'Amatic SC', cursive;
 }
@@ -239,9 +466,9 @@ select{
 }
 
 #sidebarSubmit {
-    background-color: #e34c26;
+    background-color: #cc5500;
     color: white;
-    width: 250px;
+    width: 150px;
     height: 35px;
     font-size: 14px;
 
@@ -254,10 +481,34 @@ select{
 #search {
     width: 70px;
     height: 30px;
-    background-color: #e34c26;
+    background-color: #cc5500;
     color: white;
     font-size: 11px;
     text-align: center;
     padding-bottom: 5px;
 }
 
+/*overlay for image*/
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+ background-color: #008CBA;
+}
