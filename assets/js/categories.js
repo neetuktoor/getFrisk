@@ -11,92 +11,117 @@ firebase.initializeApp(config);
 let database = firebase.database();
 let storage = firebase.storage();
 
-let $itemsGrid = $("#itemsGrid");
+let $itemsGrid = $("<div id='itemsGrid' class='mdl-grid'>");
 
-$(document).ready(function(){
-    $(".categoryButton").click(function(){
-        sortButton($(this).text().trim());
-    });
+let detachedItems;
+
+
+$(document).on('click', '.catHomeButton', function () {
+    console.log($(this).data("category"));
+    sortButton($(this).data("category"));
+    detachedItems = $("#categoryCardsGrid").detach();
 });
 
-function sortButton(category){
+$(document).on('click', '#resetCategories', function(){
+    $("#categoryGridHolder").empty().append(detachedItems);
+    $("#resetCategories").prop("disabled", true);
+});
+
+$(document).on('click', '.sortButton', function(){
+    console.log($(this).data("category"));
+    sortButton($(this).data("category"));
+    detachedItems = $("#categoryCardsGrid").detach();
+});
+
+function sortButton(category) {
     $itemsGrid.empty();
-    switch(category){
-        case 'Recently Added':
+    switch (category) {
+        case 'recent':
             getLatest();
             break;
-        case 'Highest Rated':
+        case 'rated':
             getRated();
             break;
-        case 'Alphabetical':
-            getAlphabetical();
+        case 'alphabetical':
+            getAlphabetical("forward");
+            break;
+        case 'alphabeticalReverse':
+            getAlphabetical("reverse");
             break;
         default:
             getCategory(category);
     }
 }
 
-function getRated(){
-    let latestRef = database.ref('pins/unsorted').orderByChild('score').limitToLast(4);
-    latestRef.once('value', function(snapshot){
+function getRated() {
+    let latestRef = database.ref('pins/unsorted').orderByChild('score');
+    latestRef.once('value', function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
-            genCard(childSnapshot.val(), childSnapshot.key);
+            genCard(childSnapshot.val(), childSnapshot.key, "reverse");
         });
+        $("#resetCategories").prop("disabled", false);
     });
 }
 
-function getAlphabetical(){
+function getAlphabetical(direction) {
     let latestRef = database.ref('pins/unsorted').orderByChild('place');
-    latestRef.once('value', function(snapshot){
+    latestRef.once('value', function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
-            genCard(childSnapshot.val(), childSnapshot.key);
+            genCard(childSnapshot.val(), childSnapshot.key, direction);
         });
+        $("#resetCategories").prop("disabled", false);
     });
 }
 
-function getLatest(){
-    let latestRef = database.ref('pins/unsorted').orderByKey().limitToFirst(4);
-    latestRef.once('value', function(snapshot){
+function getLatest() {
+    let latestRef = database.ref('pins/unsorted').limitToLast(4);
+    latestRef.once('value', function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
-            genCard(childSnapshot.val(), childSnapshot.key);
+            genCard(childSnapshot.val(), childSnapshot.key, "forward");
         });
+        $("#resetCategories").prop("disabled", false);
     });
 }
 
-function getCategory(category){
-    let categoryRef = database.ref('pins/categorySort' + category).orderByKey().limitToFirst(4);
+function getCategory(category) {
+    console.log(category);
+    let categoryRef = database.ref('pins/' + category);
 
-   categoryRef.once('value', function (snapshot) {
+    categoryRef.once('value', function (snapshot) {
+        console.log("data");
         snapshot.forEach(function (childSnapshot) {
-            genCard(childSnapshot.val(), childSnapshot.key);
+            genCard(childSnapshot.val(), childSnapshot.key, "forward");
         });
+        $("#resetCategories").prop("disabled", false);
     });
 }
 
-function genCard(data, key) {
-     let imgSource;
-     let getLatLng = new google.maps.LatLng(data.latLng);
+function genCard(data, key, direction) {
+    console.log("gen");
+    let imgSource;
+    let getLatLng = new google.maps.LatLng(data.latLng);
 
-     let imgStorage = storage.ref('images/' + getLatLng.toString());
+    let imgStorage = storage.ref('images/' + getLatLng.toString());
 
-     if(data.image === "true"){
-         imgStorage.getDownloadURL().then(function(url){
-             createCard(data, url, key);
-         })
-     } else {
-         imgSource='https://firebasestorage.googleapis.com/v0/b/getfrisk.appspot.com/o/images%2Fbutter-half-mural.jpg?alt=media&token=7517e8fc-ee5a-41f1-ae31-f61732726473';
-         createCard(data, imgSource, key);
-     }
+    if (data.image === "true") {
+        imgStorage.getDownloadURL().then(function (url) {
+            createCard(data, url, key, direction);
+        })
+    } else {
+        imgSource = 'https://firebasestorage.googleapis.com/v0/b/getfrisk.appspot.com/o/images%2Fbutter-half-mural.jpg?alt=media&token=7517e8fc-ee5a-41f1-ae31-f61732726473';
+        createCard(data, imgSource, key, direction);
+    }
 }
 
-function createCard(data, url, key){
+function createCard(data, url, key, direction) {
     console.log(url);
-    $itemsGrid.append($("<div>")
+
+    let toAppend = ($("<div>")
         .addClass("mdl-cell mdl-cell--3-col")
         .append($("<div>")
             .addClass("demo-card-square mdl-card mdl-shadow--2dp locationCard")
             .css({
-                'background-image' : `url('${url}')`,
+                'background-image': `url('${url}')`,
                 "background-size": "cover"
             })
             .append($("<div>")
@@ -109,14 +134,22 @@ function createCard(data, url, key){
                 , $("<div>")
                     .addClass("mdl-card__actions mdl-card--border")
                     .append($("<a>")
-                        .click(function(){
-                            showCardModal(data, key)
+                        .click(function () {
+                            showCardModal(data, key, url);
                         })
                         .addClass("mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect")
                         .text("Check it out!")))));
+    if(direction === "forward"){
+        console.log("appending");
+        $itemsGrid.append(toAppend);
+    } else {
+        $itemsGrid.prepend(toAppend);
+        console.log("prepending");
+    }
+    $("#categoryGridHolder").append($itemsGrid);
 }
 
-function showCardModal(data, key) {
+function showCardModal(data, key, img) {
     let dialog = document.querySelector('dialog');
     dialogPolyfill.registerDialog(dialog);
     let smallPosition = new google.maps.LatLng(data.latLng);
@@ -139,6 +172,7 @@ function showCardModal(data, key) {
     $("#modalDescription").text(data.description);
     $("#modalPlace").text(data.place);
     $("#modalVotes").text(data.score);
+    $("#modalImage").attr('src', `url('${img})'`);
 
     dialog.showModal();
 
@@ -156,15 +190,15 @@ function showCardModal(data, key) {
     });
 }
 
-function updateScore(score, key){
+function updateScore(score, key) {
     console.log(score);
     score++;
     $("#modalVotes").text(score);
 
     let dataScore = database.ref(`pins/unsorted/${key}/score`);
 
-    dataScore.transaction(function(score){
+    dataScore.transaction(function (score) {
         $("#modalVotes").text();
-        return score +1;
+        return score + 1;
     });
 }
