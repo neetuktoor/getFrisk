@@ -4,12 +4,19 @@
     <meta charset="utf-8">
     <title>Modal Login</title>
     <link rel="stylesheet" href="modal.css">
+
+    <!-- sign in with google button -->
+    <script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+    <!-- google material lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <!-- Firebase Reference -->
   <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
   </head>
   <body>
     <!-- Button to open the modal login form -->
-    <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="submitButton" onclick="document.getElementById('id01').style.display='block'">Login</button>
 
     <!-- The Modal -->
     <div id="id01" class="modal">
@@ -17,24 +24,33 @@
     class="close" title="Close Modal">&times;</span>
 
       <!-- Modal Content -->
-      <form class="modal-content animate" action="/action_page.php">
-        <div class="container">
-          <label><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="uname" required id="txtEmail">
+      <form class="modal-content animate" style="background-color:teal; width: 400px;    box-shadow: 5px 5px 5px 5px gray; opacity: .7;"action="/action_page.php">
+       <!--  <div class="container"> -->
+          <!-- <label><b>Email</b></label> -->
+          <input type="text" placeholder="Email" name="uname" required id="txtEmail"><br>
+          <br>
+       
+          <!-- <label><b>Password</b></label> -->
+          <input type="password" placeholder="Password" name="psw" required id="txtPassword"><br>
+          <br>
 
-          <label><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required id="txtPassword">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" id="btnLogin" onclick="LoginEmailPassword()">SIGN IN</button><br>
+          
+          <br>
 
-          <button type="submit" id="btnLogin" onclick="LoginEmailPassword()">Login</button>
+          <button class="loginBtn loginBtn--google" type="submit" onclick="googleSignin()">SIGN IN WITH GOOGLE</button><br>
+    
+          <br>
 
-          <button type="submit" onclick="googleSignin()">Sign In With Google</button>
-          <button type="submit" id="btnRegister" onclick="registerWithEmailPassword()">Register</button>
-        </div>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" id="btnRegister" onclick="registerWithEmailPassword()">Register</button><br>
+          
+          <br>
+        <!-- </div> -->
 
-        <div class="container" style="background-color:#f1f1f1">
+       <!--  <div class="container">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 
-        </div>
+        </div> -->
       </form>
     </div>
     <script type="text/javascript" src="logic2.js">
